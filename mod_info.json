@@ -4,10 +4,10 @@
 	"author":"The Syzygy Team",
     "utility":"false",
 	"version":"1.0.0",
-	"description":"Blank java-only template for Syzzgy",
+	"description":"Blank java-only template for Szyzgy",
     "gameVersion": "0.96a-RC8",
-  	"jars":["jars/Template.jar"],
-  	"modPlugin":"java.TemplateModPlugin",
+  	"jars":["jars/SyzygyUnion.jar"],
+  	"modPlugin":"SyzygyDevelopmentUnion.SyzygyTeam.TemplateModPlugin",
 	  	"dependencies": [
         #{
         #    "id": "lw_lazylib",
