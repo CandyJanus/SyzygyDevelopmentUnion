@@ -7,7 +7,8 @@
 	"description":"Blank java-only template for Szyzgy",
     "gameVersion": "0.96a-RC8",
   	"jars":["jars/SyzygyUnion.jar"],
-  	"modPlugin":"SyzygyDevelopmentUnion.SyzygyTeam.TemplateModPlugin",
+    "modPlugin":"author.modname.TemplateModPlugin",
+  #	"modPlugin":"SyzygyDevelopmentUnion.SyzygyTeam.TemplateModPlugin",
 	  	"dependencies": [
         #{
         #    "id": "lw_lazylib",
