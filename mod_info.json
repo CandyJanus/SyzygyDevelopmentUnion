@@ -1,14 +1,13 @@
 {
-    "id":"SyzygyUnion", # For the convenience of troubleshooters, include your name and the mod name, not just an acronym.
-	"name":"The Syzygy Union", # Displayed to the player
+    "id":"SyzygyDevelopmentUnion", # For the convenience of troubleshooters, include your name and the mod name, not just an acronym.
+	"name":"Syzygy Development Union", # Displayed to the player
 	"author":"The Syzygy Team",
     "utility":"false",
 	"version":"1.0.0",
 	"description":"Blank java-only template for Szyzgy",
     "gameVersion": "0.96a-RC8",
-  	"jars":["jars/SyzygyUnion.jar"],
-    "modPlugin":"author.modname.TemplateModPlugin",
-  #	"modPlugin":"SyzygyDevelopmentUnion.SyzygyTeam.TemplateModPlugin",
+  	"jars":["jars/SyzygyDevelopmentUnion.jar"],
+    "modPlugin":"SyzygyDevelopmentUnion.SyzygyTeam.TemplateModPlugin",
 	  	"dependencies": [
         #{
         #    "id": "lw_lazylib",
