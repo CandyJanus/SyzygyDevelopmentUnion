@@ -1,0 +1,50 @@
+{
+    "designTypeColors":{
+        "SDU":[215, 235, 255, 255],
+    },
+	"plugins":{
+		"SDU_PluginStarter":"data.scripts.everyframe.SDU_PluginStarter",
+	},
+
+	"ruleCommandPackages":[
+		"data.scripts.campaign.rulecmd"
+	],
+
+    "graphics":{
+		"misc":{
+			"SDU_icon": "graphics/factions/crest_SDU.png",
+			"SDU_decimus":"graphics/portraits/decimusmaximus.png",
+			"SDU_ashley": "graphics/portraits/ashleysttesserae.png",
+			"SDU_anodyne":"graphics/portraits/anodyne.png",
+			"SDU_ananke": "graphics/portraits/ananke.png",
+			"SDU_jmccrae": "graphics/portraits/jmccrae.png",
+			"SDU_triela": "graphics/portraits/triela.png"
+		},
+
+        "blueprint_packages":{
+			//"seven_eptaphaseship_package":"graphics/icons/cargo/seven_blueprint_package.png",
+			//"seven_eptashipgun_package":"graphics/icons/cargo/seven_blueprint_package.png",
+			//"seven_takeshido_package":"graphics/icons/cargo/seven_takeshido_package.png",
+	},
+
+		"fx":{
+			"ZakuHeatHawk_glow":"graphics/ships/Zaku/ZakuHeatHawk_glow.png",
+			"ZakuHeatHawk08":"graphics/ships/Zaku/ZakuHeatHawk08.png",
+			"ZakuHeatHawk09":"graphics/ships/Zaku/ZakuHeatHawk09.png",
+			"ZakuHeatHawk10":"graphics/ships/Zaku/ZakuHeatHawk10.png",
+			"ZakuHeatHawk11":"graphics/ships/Zaku/ZakuHeatHawk11.png",
+			"ZakuHeatHawk12":"graphics/ships/Zaku/ZakuHeatHawk12.png",
+		},
+		
+		"spatk":{
+			"fwdslash":"graphics/weapons/Galevis/Galevis_slash29.png",
+			"leftslash":"graphics/weapons/Galevis/Galevis_slash27.png",
+			"rightslash":"graphics/weapons/Galevis/Galevis_slash28.png",
+			"leftspin":"graphics/weapons/Galevis/Galevis_slash31.png",
+			"rightspin":"graphics/weapons/Galevis/Galevis_slash30.png",
+			"smolwhitepixel":"graphics/misc/smolwhitepixel.png",
+		},
+		
+    },
+}
+}

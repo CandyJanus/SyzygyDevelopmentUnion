@@ -1,0 +1,12 @@
+id,name,faction,desc,script,icon,order
+SevencorpProtectorsMarket,Protectors Market,sevencorp,A market ran by the Protectors which primarily sells mecha and marine equipment,data.scripts.world.submarkets.SevencorpProtectorsMarket,,7779
+SevencorpSyzygyMarket,Syzygy Market,sevencorp,A market ran by Syzygy Actuators which primarily sells weapons,data.scripts.world.submarkets.SevencorpSyzygyMarket,,7780
+SevencorpKantinaCombineMarket,Kantina Combine Market,sevencorp,A market ran by the Kantina Combine which primarily sells drugs and other illicit commodities,data.scripts.world.submarkets.SevencorpKantinaCombineMarket,,7781
+SevencorpChutnamSecurityMarket,Chutnam Security Market,sevencorp,A market ran by Chutnam Security which sells all sorts of goods from other factions,data.scripts.world.submarkets.SevencorpChutnamSecurityMarket,,7782
+SevencorpEliteBuyersMarket,Elite Buyers Market,sevencorp,An Epta Elite Buyers market which stocks private wares given only to Epta's most trusted business partners,data.scripts.world.submarkets.SevencorpEliteBuyersMarket,,7783
+SevencorpAdProSecMarket,AdProSec Market,sevencorp,A market ran by AdProSec which primarily sells phase ships,data.scripts.world.submarkets.SevencorpAdProSecMarket,,7784
+SevencorpShootingStarsMarket,Shooting Stars Market,sevencorp,A market ran by Shooting Stars which primarily sells small quantities of superships,data.scripts.world.submarkets.SevencorpShootingStarsMarket,,7785
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,

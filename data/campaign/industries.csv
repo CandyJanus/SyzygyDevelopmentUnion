@@ -1,0 +1,54 @@
+id,name,cost mult,build time,income,upkeep,downgrade,upgrade,tags,data,image,plugin,desc,order
+SDU_fundament_station,SDU Fundament,,,,5,,,"station, starfortress, unraidable, structure","{
+radius:70,
+variant:SDU_fundament_standard,
+fleetName:Fundament
+}",graphics/icons/industry/battlestation.png,data.scripts.world.industries_and_buildings.SDU_fundament_industry,It's a big ass ship.,2030
+tradestation_station,SDU Tradestation,,,,5,,,"station, starfortress, unraidable, structure","{
+radius:70,
+variant:station3_hightech_Standard,
+fleetName:Tradestation
+}",graphics/icons/industry/battlestation.png,data.scripts.world.industries_and_buildings.tradestation_station_industry,It's a big ass ship.,2030
+SDU_station_manufactory,Station Manufactory,,,,,,,"structure, patrol",,graphics/icons/industry/battlestation.png,data.scripts.world.industries_and_buildings.tradestation_station_industry,"",500
+,,,,,,,,,,,,,500
+SDU_manufactory,SDU Manufactory,,,,,,,"structure, patrol",,graphics/icons/industry/battlestation.png,data.scripts.world.industries_and_buildings.SDU_manufactory,"SDU's state of the art integrated manufactory supplies their subcorporations with everything they need to survive prolonged periods away from Proelefsi and maintains their Megalos defenders. If the station is invaded and Proelefsi is still fuctional then all machinery on board the station will become hostile towards the invaders and make it easy for Epta to retake it.",500
+,,,,,,,,,,,,,500
+,,,,,,,,,,,,,500
+,,,,,,,,,,,,,500
+,,,,,,,,,,,,,500
+,,,,,,,,,,,,,500
+,,,,,,,,,,,,,500
+,,,,,,,,,,,,,500
+,,,,,,,,,,,,,500
+,,,,,,,,,,,,,500
+,,,,,,,,,,,,,500
+,,,,,,,,,,,,,500
+,,,,,,,,,,,,,500
+,,,,,,,,,,,,,500
+,,,,,,,,,,,,,500
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,9999
+,,,,,,,,,,,,,9999
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,500
+,,,,,,,,,,,,,500
+,,,,,,,,,,,,,500
+,,,,,,,,,,,,,500
+,,,,,,,,,,,,,500
+,,,,,,,,,,,,,500
+,,,,,,,,,,,,,500
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,110
+,,,,,,,,,,,,,110
+,,,,,,,,,,,,,110
+,,,,,,,,,,,,,110
+,,,,,,,,,,,,,110
+,,,,,,,,,,,,,110
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,1950
+,,,,,,,,,,,,,400
+,,,,,,,,,,,,,
