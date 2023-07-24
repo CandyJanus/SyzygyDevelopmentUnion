@@ -10,8 +10,8 @@
 	"displayNameWithArticle":"Syzygy Development Union",
 	"displayNameIsOrAre":"is",
 
-	"logo":"graphics/factions/narcepolis_flag.png",
-	"crest":"graphics/factions/narcepolis_crest.png",
+	"logo":"graphics/factions/SDU_flag.png",
+	"crest":"graphics/factions/SDU_crest.png",
 
 	"showInIntelTab":false,
 	"shipNamePrefix":"NAS",

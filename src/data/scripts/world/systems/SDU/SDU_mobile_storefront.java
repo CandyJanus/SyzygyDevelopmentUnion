@@ -28,12 +28,12 @@ public class SDU_mobile_storefront {
     private static final List<Vector2f> WAYPOINTS = new ArrayList<>();
 
     static {
-        WAYPOINTS.add(new Vector2f(-18000f, -30000f));
-        WAYPOINTS.add(new Vector2f(-26000f, 0f));
-        WAYPOINTS.add(new Vector2f(-18000f, 30000f));
-        WAYPOINTS.add(new Vector2f(18000f, 30000f));
-        WAYPOINTS.add(new Vector2f(26000f, 0f));
-        WAYPOINTS.add(new Vector2f(18000f, -30000f));
+        WAYPOINTS.add(new Vector2f(-9000f, -15000f));
+        WAYPOINTS.add(new Vector2f(-13000f, 0f));
+        WAYPOINTS.add(new Vector2f(-9000f, 15000f));
+        WAYPOINTS.add(new Vector2f(9000f, 15000f));
+        WAYPOINTS.add(new Vector2f(13000f, 0f));
+        WAYPOINTS.add(new Vector2f(9000f, -15000f));
     }
     // - Speed on the world sector map
     private static final float SPEED = 10f;
@@ -146,16 +146,30 @@ public class SDU_mobile_storefront {
 
             StarSystemAPI system = sector.createStarSystem(systemname);
 
+            PlanetAPI tradebasestar = system.initStar(
+                    systemname,
+                    "star_orange",
+                    0f,        // radius (in pixels at default zoom)
+                    0f, // corona radius, from star edge
+                    0f, // solar wind burn level
+                    0f, // flare probability
+                    0f); // cr loss mult
+
+            tradebasestar.setName(systemname);
+            tradebasestar.setLocation(0f,0f);
+
             system.getLocation().set(WAYPOINTS.get(0));
             LocationAPI hyper = Global.getSector().getHyperspace();
 
             system.setBackgroundTextureFilename("graphics/backgrounds/background3.jpg");
 
             // Create a centerpoint in the system, for everything to rotate around.
-            SectorEntityToken centerpoint = system.initNonStarCenter();
+            //SectorEntityToken centerpoint = system.initNonStarCenter();
+            SectorEntityToken centerpoint = tradebasestar;
 
             //Change our type to NEBULA to indicate we have no centerpoint. Might have some consequences, but this is the only way I found that is neat to do
-            system.setType(StarSystemGenerator.StarSystemType.NEBULA);
+            //system.setType(StarSystemGenerator.StarSystemType.NEBULA);
+            system.setType(StarSystemGenerator.StarSystemType.SINGLE);
 
             // Sets light color in entire system, affects all entities
             system.setLightColor(new Color(255, 255, 255));
@@ -194,7 +208,7 @@ public class SDU_mobile_storefront {
                                     Industries.WAYSTATION,
                                     Industries.HEAVYBATTERIES,
                                     Industries.STARFORTRESS_HIGH,
-                                    "SDU_station_manufactory"
+                                    "SDU_manufactory"
                             )
                     ),
                     false,
@@ -205,7 +219,7 @@ public class SDU_mobile_storefront {
 
             // Jump point : has a miniature script setting its rotation to be oppositely-locked to fundament ---------------
             JumpPointAPI jumpPoint = Global.getFactory().createJumpPoint(jumpid, jumpname);
-            jumpPoint.setCircularOrbit(centerpoint, 180f, 900f, 99999999999f);
+            jumpPoint.setCircularOrbit(centerpoint, 180f, 150f, 99999999999f);
             system.addEntity(jumpPoint);
             new OrbitOppositePlugin(jumpPoint, tradebase);
 
@@ -322,6 +336,7 @@ public class SDU_mobile_storefront {
             system.getLocation().x = spawnPos.x;
             system.getLocation().y = spawnPos.y;
             system.getLocation().set(spawnPos.x, spawnPos.y);
+
         }
 
         @Override
@@ -347,8 +362,8 @@ public class SDU_mobile_storefront {
                 system.getLocation().x += dirVector.x;
                 system.getLocation().y += dirVector.y;
 
-                system.setMapGridHeightOverride(system.getLocation().y);
-                system.setMapGridWidthOverride(system.getLocation().x);
+                //system.setMapGridHeightOverride(system.getLocation().y);
+                //system.setMapGridWidthOverride(system.getLocation().x);
             }
 
             //Always adjust our angle to point towards our "correct" facing: if the player is in the system, we only adjust rotation once
@@ -368,7 +383,7 @@ public class SDU_mobile_storefront {
                 currentFacing = VectorUtils.getAngle(system.getLocation(), WAYPOINTS.get(currentWaypoint));
             }
 
-            starStation.getStarSystem().getCenter().setLocation(system.getLocation().x, system.getLocation().y);
+            //starStation.getStarSystem().getCenter().setLocation(system.getLocation().x, system.getLocation().y);
         }
 
         //Utility function for also spawning small "streaking stars" as a sign that the thing is moving

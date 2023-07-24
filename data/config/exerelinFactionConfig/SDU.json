@@ -37,7 +37,6 @@
     "vengeanceFleetNamesSingle":["a Hunter Fragment", "a Sub-Ordo", "an Ordo"],
 
     "specialForcesNamerClass":"exerelin.campaign.intel.specialforces.namer.FactionListNamer",
-    #,"specialForcesNamerClass":"data.scripts.world.specialTaskForceNamers.SDU_ForcesNamer",
     "startShipsSolo":[
 	["onslaught_elite"],
 	["onslaught_elite"],
@@ -69,11 +68,11 @@
     ["onslaught_elite", "onslaught_elite", "onslaught_elite"],
     ],
     "startShipsTradeLarge":[
-      ["onslaught_elite", "onslaught_elite", "onslaught_elite"],
+      ["astral_Elite", "astral_Elite", "astral_Elite"],
     ],
-	"startShipsExplorerLarge":[["onslaught_elite", "onslaught_elite", "onslaught_elite"]],
+	"startShipsExplorerLarge":[["astral_Elite", "astral_Elite", "astral_Elite"]],
     "startShipsSuper":[
-        ["onslaught_elite"],
+        ["astral_Elite"],
     ],
     
     "defenceStations":[

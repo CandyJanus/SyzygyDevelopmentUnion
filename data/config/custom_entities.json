@@ -7,7 +7,7 @@
     "icon":"graphics/icons/cryosleeper.png",
     "iconWidth":20,
     "iconHeight":20,
-    "sprite":"graphics/ships/fundament/SDU_fundament_station_icon2.png",
+    "sprite":"graphics/stations/station_side07.png",
     "spriteWidth":140,
     "spriteHeight":50,
     "renderShadow":false,

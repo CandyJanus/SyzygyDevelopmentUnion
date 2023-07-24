@@ -1,10 +1,7 @@
 package data.scripts.world.industries_and_buildings;
 
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.campaign.BattleAPI;
-import com.fs.starfarer.api.campaign.CampaignEventListener.FleetDespawnReason;
-import com.fs.starfarer.api.campaign.CampaignFleetAPI;
-import com.fs.starfarer.api.campaign.FactionAPI;
+import com.fs.starfarer.api.campaign.*;
 import com.fs.starfarer.api.campaign.econ.CommodityOnMarketAPI;
 import com.fs.starfarer.api.campaign.econ.Industry;
 import com.fs.starfarer.api.campaign.listeners.FleetEventListener;
@@ -13,17 +10,13 @@ import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.impl.campaign.econ.impl.BaseIndustry;
 import com.fs.starfarer.api.impl.campaign.econ.impl.MilitaryBase;
 import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
+import com.fs.starfarer.api.impl.campaign.fleets.*;
+import com.fs.starfarer.api.impl.campaign.ids.*;
+import com.fs.starfarer.api.campaign.CampaignEventListener.FleetDespawnReason;
+import com.fs.starfarer.api.campaign.CampaignFleetAPI;
 import com.fs.starfarer.api.impl.campaign.fleets.FleetFactory.PatrolType;
-import com.fs.starfarer.api.impl.campaign.fleets.FleetFactoryV3;
-import com.fs.starfarer.api.impl.campaign.fleets.FleetParamsV3;
-import com.fs.starfarer.api.impl.campaign.fleets.PatrolAssignmentAIV4;
-import com.fs.starfarer.api.impl.campaign.fleets.RouteManager;
 import com.fs.starfarer.api.impl.campaign.fleets.RouteManager.RouteData;
 import com.fs.starfarer.api.impl.campaign.fleets.RouteManager.RouteFleetSpawner;
-import com.fs.starfarer.api.impl.campaign.ids.Commodities;
-import com.fs.starfarer.api.impl.campaign.ids.MemFlags;
-import com.fs.starfarer.api.impl.campaign.ids.Ranks;
-import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.MarketCMD;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
@@ -33,7 +26,7 @@ import com.fs.starfarer.api.util.Pair;
 import java.util.Random;
 
 
-public class tradestation_station_industry extends BaseIndustry implements RouteFleetSpawner, FleetEventListener {
+public class SDU_manufactory extends BaseIndustry implements RouteFleetSpawner, FleetEventListener {
     //The defense bonus provided by the industry: 0.5f = 50% bonus (Station level), 2f = 200% bonus (Star Fortress level) etc.
     private static final float DEFENSE_BONUS = 6f;
     private static PatrolType MEGALOS_ESCORT_TYPE= PatrolType.HEAVY;
@@ -218,7 +211,7 @@ public class tradestation_station_industry extends BaseIndustry implements Route
         FleetParamsV3 params = new FleetParamsV3(
                 market,
                 null, // loc in hyper; don't need if have market
-                "sevencorp",
+                "SDU",
                 route.getQualityOverride(), // quality override
                 fleetType,
                 combat, // combatPts
@@ -235,11 +228,11 @@ public class tradestation_station_industry extends BaseIndustry implements Route
         //params.modeOverride = ShipPickMode.PRIORITY_THEN_ALL;
         CampaignFleetAPI fleet = FleetFactoryV3.createFleet(params);
 
-        FactionAPI Epta = Global.getSector().getFaction("sevencorp");
+        FactionAPI sdu = Global.getSector().getFaction("SDU");
 
         for (int i = 0; i < DEFENDERCOUNT; i++) {
             FleetMemberAPI ship = fleet.getFleetData().addFleetMember(MEGALOS_DEFENDER_VARIANT_1);
-            ship.setCaptain(OfficerManagerEvent.createOfficer(Epta, 7));
+            ship.setCaptain(OfficerManagerEvent.createOfficer(sdu, 7));
         }
 
         if (fleet == null || fleet.isEmpty()) return null;
@@ -278,7 +271,7 @@ public class tradestation_station_industry extends BaseIndustry implements Route
         return fleet;
     }
     public String getRouteSourceId() {
-        return getMarket().getId() + "_" + "sevencorp";
+        return getMarket().getId() + "_" + "SDU";
     }
     @Override
     public boolean isAvailableToBuild() {

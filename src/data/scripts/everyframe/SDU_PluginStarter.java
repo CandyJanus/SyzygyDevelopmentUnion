@@ -25,9 +25,11 @@ public class SDU_PluginStarter extends BaseEveryFrameCombatPlugin {
             StartFleetSet fleetSet = faction.getStartFleetSet(StartFleetType.SUPER.name());
             List<String> anankeFleet = new ArrayList<>(1);
             anankeFleet.add("SDU_ananke_gift");
-            fleetSet.addFleet(anankeFleet);
-            Global.getSettings().getDescription("SDU_ananke", Description.Type.SHIP).setText1(ANANKEDESC);
-            addedOnce = true;
+            if(fleetSet!=null){
+                fleetSet.addFleet(anankeFleet);
+                Global.getSettings().getDescription("SDU_ananke", Description.Type.SHIP).setText1(ANANKEDESC);
+                addedOnce = true;
+            }
         }
     }
 }

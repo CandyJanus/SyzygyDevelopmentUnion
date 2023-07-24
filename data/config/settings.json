@@ -12,7 +12,7 @@
 
     "graphics":{
 		"misc":{
-			"SDU_icon": "graphics/factions/crest_SDU.png",
+			"SDU_icon": "graphics/factions/SDU_crest.png",
 			"SDU_decimus":"graphics/portraits/decimusmaximus.png",
 			"SDU_ashley": "graphics/portraits/ashleysttesserae.png",
 			"SDU_anodyne":"graphics/portraits/anodyne.png",

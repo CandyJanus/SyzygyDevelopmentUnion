@@ -9,9 +9,8 @@ radius:70,
 variant:station3_hightech_Standard,
 fleetName:Tradestation
 }",graphics/icons/industry/battlestation.png,data.scripts.world.industries_and_buildings.tradestation_station_industry,It's a big ass ship.,2030
-SDU_station_manufactory,Station Manufactory,,,,,,,"structure, patrol",,graphics/icons/industry/battlestation.png,data.scripts.world.industries_and_buildings.tradestation_station_industry,"",500
-,,,,,,,,,,,,,500
 SDU_manufactory,SDU Manufactory,,,,,,,"structure, patrol",,graphics/icons/industry/battlestation.png,data.scripts.world.industries_and_buildings.SDU_manufactory,"SDU's state of the art integrated manufactory supplies their subcorporations with everything they need to survive prolonged periods away from Fundament and maintains their Megalos defenders. If the station is invaded and Fundament is still fuctional then all machinery on board the station will become hostile towards the invaders and make it easy for SDU to retake it.",500
+,,,,,,,,,,,,,500
 ,,,,,,,,,,,,,500
 ,,,,,,,,,,,,,500
 ,,,,,,,,,,,,,500

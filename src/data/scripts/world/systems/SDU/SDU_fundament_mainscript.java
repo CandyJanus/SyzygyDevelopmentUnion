@@ -37,16 +37,12 @@ public class SDU_fundament_mainscript {
     private static final List<Vector2f> WAYPOINTS = new ArrayList<>();
 
     static {
-        WAYPOINTS.add(new Vector2f(-8619f, -15538f));
-        WAYPOINTS.add(new Vector2f(-8982f, -9886f));
-        WAYPOINTS.add(new Vector2f(-2803f, -6351f));
-        WAYPOINTS.add(new Vector2f(-712f, -1336f));
-        WAYPOINTS.add(new Vector2f(-7499f, 3320f));
-        WAYPOINTS.add(new Vector2f(-15267f, 3133f));
-        WAYPOINTS.add(new Vector2f(-17532f, -1074f));
-        WAYPOINTS.add(new Vector2f(-8290f, -4294f));
-        WAYPOINTS.add(new Vector2f(-17562f, -13045f));
-        WAYPOINTS.add(new Vector2f(-12716f, -15261f));
+        WAYPOINTS.add(new Vector2f(9000f, -15000f));
+        WAYPOINTS.add(new Vector2f(13000f, 0f));
+        WAYPOINTS.add(new Vector2f(9000f, 15000f));
+        WAYPOINTS.add(new Vector2f(-9000f, 15000f));
+        WAYPOINTS.add(new Vector2f(-13000f, 0f));
+        WAYPOINTS.add(new Vector2f(-9000f, -15000f));
     }
     // - Speed on the world sector map
     private static final float SPEED = 10f;
@@ -101,17 +97,17 @@ public class SDU_fundament_mainscript {
         FactionAPI derelict = sector.getFaction(Factions.DERELICT);
 
         //vanilla factions
-        SDU.setRelationship(hegemony.getId(), -1.0f);
+        SDU.setRelationship(hegemony.getId(), -0.2f);
         SDU.setRelationship(player.getId(), 0);
-        SDU.setRelationship(pirates.getId(), -0.5f);
+        SDU.setRelationship(pirates.getId(), -0.2f);
 
-        SDU.setRelationship(independent.getId(), 0.5f);
+        SDU.setRelationship(independent.getId(), 0.4f);
 
-        SDU.setRelationship(tritachyon.getId(), 0.3f);
+        SDU.setRelationship(tritachyon.getId(), 0.1f);
 
-        SDU.setRelationship(kol.getId(), -0.5f);
-        SDU.setRelationship(path.getId(), -0.75f);
-        SDU.setRelationship(church.getId(), -0.75f);
+        SDU.setRelationship(kol.getId(), -0.8f);
+        SDU.setRelationship(path.getId(), -0.8f);
+        SDU.setRelationship(church.getId(), -0.6f);
 
         SDU.setRelationship(persean.getId(), 0.25f);
         SDU.setRelationship(guard.getId(), 0.25f);
@@ -124,24 +120,24 @@ public class SDU_fundament_mainscript {
 
         // mod factions
         SDU.setRelationship("vic", 0f);
-        SDU.setRelationship("ironsentinel", -0.49f);
-        SDU.setRelationship("ironshell", -0.49f);
+        SDU.setRelationship("ironsentinel", -0.2f);
+        SDU.setRelationship("ironshell", -0.2f);
 
-        SDU.setRelationship("sylphon", 0.25f);
-        SDU.setRelationship("uaf", 0.19f);
+        SDU.setRelationship("sylphon", 0.49f);
+        SDU.setRelationship("uaf", 0.49f);
         SDU.setRelationship("osiris", 0.5f);
         SDU.setRelationship("mayorate", 0.3f);
-        SDU.setRelationship("apex_design", -0.49f);
+        SDU.setRelationship("apex_design", -0.3f);
         SDU.setRelationship("dassault_mikoyan", 0.2f);
         SDU.setRelationship("MVS", 0.3f);
-        SDU.setRelationship("vri", 0.7f);
+        SDU.setRelationship("vri", 0.8f);
 
         SDU.setRelationship("Coalition", -0.3f);
         SDU.setRelationship("tiandong", 0f);
         SDU.setRelationship("kadur_remnant", -0.3f);
         SDU.setRelationship("blackrock_driveyards", 0.25f);
         SDU.setRelationship("interstellarimperium", 0.25f);
-        SDU.setRelationship("HMI", 0.5f);
+        SDU.setRelationship("HMI", 0.0f);
         SDU.setRelationship("al_ars", -0.25f);
         SDU.setRelationship("SCY", 0.25f);
         SDU.setRelationship("blade_breakers", -0.5f);
@@ -179,96 +175,29 @@ public class SDU_fundament_mainscript {
         SDU.setRelationship("minor_pirate_5", -0.6f);
         SDU.setRelationship("minor_pirate_6", -0.6f);
 
-        SharedData.getData().getPersonBountyEventData().addParticipatingFaction("bushido");
-
-        FactionAPI bushido = sector.getFaction("bushido");
-
-
-        //vanilla factions
-        bushido.setRelationship(hegemony.getId(), -0.49f);
-        bushido.setRelationship(player.getId(), -0.15f);
-        bushido.setRelationship(pirates.getId(), 0.75f);
-
-        bushido.setRelationship(independent.getId(), 0.1f);
-
-        bushido.setRelationship(tritachyon.getId(), -0.25f);
-
-        bushido.setRelationship(kol.getId(), 0.5f);
-        bushido.setRelationship(path.getId(), 0.5f);
-        bushido.setRelationship(church.getId(), -0.75f);
-
-        bushido.setRelationship(persean.getId(), -0.25f);
-        bushido.setRelationship(guard.getId(), -0.25f);
-        bushido.setRelationship(diktat.getId(), -0.25f);
-
-
-        //environment
-        bushido.setRelationship(remnant.getId(), RepLevel.HOSTILE);
-        bushido.setRelationship(derelict.getId(), RepLevel.HOSTILE);
-
-        // mod factions
-        bushido.setRelationship("SDU", 0.1f);
-        bushido.setRelationship("vic", 0f);
-        bushido.setRelationship("ironsentinel", -0.75f);
-        bushido.setRelationship("ironshell", -0.75f);
-
-        bushido.setRelationship("sylphon", -0.4f);
-        bushido.setRelationship("Coalition", -0.3f);
-        bushido.setRelationship("tiandong", 0f);
-        bushido.setRelationship("kadur_remnant", -0.75f);
-        bushido.setRelationship("blackrock_driveyards", 0.25f);
-        bushido.setRelationship("interstellarimperium", -0.25f);
-        bushido.setRelationship("HMI", 0.5f);
-        bushido.setRelationship("al_ars", -0.25f);
-        bushido.setRelationship("mayorate", -0.25f);
-        bushido.setRelationship("SCY", -0.25f);
-        bushido.setRelationship("blade_breakers", 0f);
-        bushido.setRelationship("dassault_mikoyan", 0f);
-        bushido.setRelationship("diableavionics", 0f);
-        bushido.setRelationship("ORA", 0.25f);
-        bushido.setRelationship("gmda", -0.25f);
-        bushido.setRelationship("gmda_patrol", -0.25f);
-
-        bushido.setRelationship("tahlan_legioinfernalis", 0.5f);
-        bushido.setRelationship("yrxp", 0f);
-
-        bushido.setRelationship("cabal", 0.5f);
-
-        // the below are just copied from xhan, but might be fine?
-        bushido.setRelationship("shadow_industry", -0.6f);
-        bushido.setRelationship("roider", -0.6f);
-        bushido.setRelationship("exipirated", -0.6f);
-        bushido.setRelationship("draco", -0.6f);
-        bushido.setRelationship("fang", -0.6f);
-        bushido.setRelationship("junk_pirates", -0.6f);
-        bushido.setRelationship("junk_pirates_hounds", -0.6f);
-        bushido.setRelationship("junk_pirates_junkboys", -0.6f);
-        bushido.setRelationship("junk_pirates_technicians", -0.6f);
-        bushido.setRelationship("the_cartel", -0.6f);
-        bushido.setRelationship("nullorder", -0.6f);
-        bushido.setRelationship("templars", -0.6f);
-        bushido.setRelationship("crystanite_pir", -0.6f);
-        bushido.setRelationship("infected", -0.6f);
-        bushido.setRelationship("new_galactic_order", -0.6f);
-        bushido.setRelationship("TF7070_D3C4", -0.6f);
-        bushido.setRelationship("minor_pirate_1", -0.6f);
-        bushido.setRelationship("minor_pirate_2", -0.6f);
-        bushido.setRelationship("minor_pirate_3", -0.6f);
-        bushido.setRelationship("minor_pirate_4", -0.6f);
-        bushido.setRelationship("minor_pirate_5", -0.6f);
-        bushido.setRelationship("minor_pirate_6", -0.6f);
-
 
         system.getLocation().set(WAYPOINTS.get(0));
         LocationAPI hyper = Global.getSector().getHyperspace();
 
+        PlanetAPI fundamentstar = system.initStar("SDU_fundament_star", // unique id for this star
+                "star_white", // id in planets.json
+                0f,        // radius (in pixels at default zoom)
+                0f, // corona radius, from star edge
+                0f, // solar wind burn level
+                0f, // flare probability
+                0f); // cr loss mult
+
+        fundamentstar.setName("Fundament");
+        fundamentstar.setLocation(0f,0f);
+
         system.setBackgroundTextureFilename("graphics/backgrounds/background3.jpg");
 
         // Create a centerpoint in the system, for everything to rotate around.
-        SectorEntityToken centerpoint = system.initNonStarCenter();
+        SectorEntityToken centerpoint = fundamentstar;
 
         //Change our type to NEBULA to indicate we have no centerpoint. Might have some consequences, but this is the only way I found that is neat to do
-        system.setType(StarSystemGenerator.StarSystemType.NEBULA);
+        //system.setType(StarSystemGenerator.StarSystemType.NEBULA);
+        system.setType(StarSystemGenerator.StarSystemType.SINGLE);
 
         // Sets light color in entire system, affects all entities
         system.setLightColor(new Color(255, 255, 255));
@@ -440,8 +369,8 @@ public class SDU_fundament_mainscript {
                 system.getLocation().x += dirVector.x;
                 system.getLocation().y += dirVector.y;
 
-                system.setMapGridHeightOverride(system.getLocation().y);
-                system.setMapGridWidthOverride(system.getLocation().x);
+                //system.setMapGridHeightOverride(system.getLocation().y);
+                //system.setMapGridWidthOverride(system.getLocation().x);
             }
 
             //Always adjust our angle to point towards our "correct" facing: if the player is in the system, we only adjust rotation once

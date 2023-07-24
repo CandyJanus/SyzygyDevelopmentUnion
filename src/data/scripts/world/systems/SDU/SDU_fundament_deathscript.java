@@ -80,13 +80,14 @@ public class SDU_fundament_deathscript implements FleetEventListener, EveryFrame
                 Misc.fadeAndExpire(addedListenerTo, 2f);
                 log.info("dying");
                 system.addHitParticle(stationEntity.getLocation(), Misc.ZERO, 500, 1f, 0.5f, Color.white);
-                system.initStar("SDU_fundament_star", // unique id for this star
-                        "star_white", // id in planets.json
-                        200f,        // radius (in pixels at default zoom)
-                        100, // corona radius, from star edge
-                        5f, // solar wind burn level
-                        1f, // flare probability
-                        2f); // cr loss mult
+                system.getStar().setRadius(100f);
+                //system.initStar("SDU_fundament_star", // unique id for this star
+                //                        "star_white", // id in planets.json
+                //                        200f,        // radius (in pixels at default zoom)
+                //                        100, // corona radius, from star edge
+                //                        5f, // solar wind burn level
+                //                        1f, // flare probability
+                //                        2f); // cr loss mult
             }
 
             Global.getSector().getEconomy().removeMarket(market);
