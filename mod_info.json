@@ -6,23 +6,14 @@
 	"version":"1.0.0",
 	"description":"Blank java-only template for Szyzgy",
     "gameVersion": "0.96a-RC8",
+    "totalConversion": "false",
   	"jars":["jars/SyzygyDevelopmentUnion.jar"],
-    "modPlugin":"SyzygyDevelopmentUnion.SyzygyTeam.TemplateModPlugin",
-	  	"dependencies": [
-        #{
-        #    "id": "lw_lazylib",
-        #    "name": "LazyLib",
-        #    #"version": "2.7b"
-        #},
-        #{
-        #    "id": "MagicLib",
-        #    "name": "MagicLib",
-        #    #"version": "0.34"
-        #},
-        #{
-        #    "id": "shaderLib",
-        #    "name": "GraphicsLib",
-        #    #"version": "1.5.1"
-        #}
+    "modPlugin":"data.scripts.SDU_ModPlugin",
+    "dependencies": [
+      {"id": "lw_lazylib", "name": "LazyLib"},
+      {"id": "MagicLib", "name": "MagicLib"}
+    ],
+    "ruleCommandPackages":[
+      "data.scripts.rulecmds",
     ],
 }
