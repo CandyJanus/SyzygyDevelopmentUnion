@@ -211,7 +211,7 @@ public class tradestation_station_industry extends BaseIndustry implements Route
         FleetParamsV3 params = new FleetParamsV3(
                 market,
                 null, // loc in hyper; don't need if have market
-                "sevencorp",
+                "SDU",
                 route.getQualityOverride(), // quality override
                 fleetType,
                 combat, // combatPts
@@ -228,11 +228,11 @@ public class tradestation_station_industry extends BaseIndustry implements Route
         //params.modeOverride = ShipPickMode.PRIORITY_THEN_ALL;
         CampaignFleetAPI fleet = FleetFactoryV3.createFleet(params);
 
-        FactionAPI Epta = Global.getSector().getFaction("sevencorp");
+        FactionAPI sdu = Global.getSector().getFaction("SDU");
 
         for (int i = 0; i < DEFENDERCOUNT; i++) {
             FleetMemberAPI ship = fleet.getFleetData().addFleetMember(MEGALOS_DEFENDER_VARIANT_1);
-            ship.setCaptain(OfficerManagerEvent.createOfficer(Epta, 7));
+            ship.setCaptain(OfficerManagerEvent.createOfficer(sdu, 7));
         }
 
         if (fleet == null || fleet.isEmpty()) return null;
@@ -271,7 +271,7 @@ public class tradestation_station_industry extends BaseIndustry implements Route
         return fleet;
     }
     public String getRouteSourceId() {
-        return getMarket().getId() + "_" + "sevencorp";
+        return getMarket().getId() + "_" + "SDU";
     }
     @Override
     public boolean isAvailableToBuild() {

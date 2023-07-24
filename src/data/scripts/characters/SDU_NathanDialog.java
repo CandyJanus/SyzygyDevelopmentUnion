@@ -16,11 +16,11 @@ public class SDU_NathanDialog implements InteractionDialogPlugin {
     public static enum OptionId {
         INIT,
         CONT,
-        talkabouteptabase,
+        talkaboutsdubase,
         talkaboutotherbusinessesbase,
         talkaboutdecimusbase,
         shoottheshit,
-        talkabouteptaoverview, talkabouteptaoverviewtwo, leave, talkaboutsyzygy, talkaboutprotectors, talkaboutkantina, talkaboutsstars, talkaboutchutnam, talkaboutadprosec, talkaboutsyzygyconflictofinterest, talkaboutnathan, talkaboutrose, talkaboutashley, talkabouttriela, talkaboutadproadmins, talkaboutanodyne, talkaboutanodynetwo, talkaboutdecimustwo, shoottheshitfof, shoottheshitfofneverplayed, shoottheshitfofneverplayedtwo, shoottheshitfofstack, shoottheshitfof1v1, talkaboutdecimus, talkaboutashleybase, talkaboutashleytwo;
+        talkaboutsduoverview, talkaboutsduoverviewtwo, leave, talkaboutsyzygy, talkaboutprotectors, talkaboutkantina, talkaboutsstars, talkaboutchutnam, talkaboutadprosec, talkaboutsyzygyconflictofinterest, talkaboutnathan, talkaboutrose, talkaboutashley, talkabouttriela, talkaboutadproadmins, talkaboutanodyne, talkaboutanodynetwo, talkaboutdecimustwo, shoottheshitfof, shoottheshitfofneverplayed, shoottheshitfofneverplayedtwo, shoottheshitfofstack, shoottheshitfof1v1, talkaboutdecimus, talkaboutashleybase, talkaboutashleytwo;
     }
 
     protected InteractionDialogAPI dialog;
@@ -59,33 +59,33 @@ public class SDU_NathanDialog implements InteractionDialogPlugin {
             textPanel.addParagraph(text, Global.getSettings().getColor("buttonText"));
         }
 
-        Color sc = Global.getSector().getFaction("sevencorp").getBaseUIColor();
+        Color sc = Global.getSector().getFaction("SDU").getBaseUIColor();
 
         MemoryAPI memory = Global.getSector().getMemoryWithoutUpdate();
         
-        PersonAPI character = Global.getSector().getImportantPeople().getPerson("epta_ashley");
+        PersonAPI character = Global.getSector().getImportantPeople().getPerson("sdu_ashley");
 
         switch (option) {
             case INIT:
                 visual.showPersonInfo(character, true);
 
                 options.clearOptions();
-                options.addOption("\"I was wondering a bit about the Epta Consortium.\"", OptionId.talkabouteptabase, null);
+                options.addOption("\"I was wondering a bit about the SDU.\"", OptionId.talkaboutsdubase, null);
                 options.addOption("\"What do you think about the other businesses and leaders in the Consortium?\"", OptionId.talkaboutotherbusinessesbase, null);
                 options.addOption("\"Who are you?\"", OptionId.talkaboutdecimusbase, null);
                 options.addOption("\"What's up?\"", OptionId.shoottheshit, null);
                 options.addOption("\"Bye\"", OptionId.CONT, null);
                 break;
 
-                //talking about epta
-            case talkabouteptabase:
-                textPanel.addParagraph("\"Sure! Totally! I love talking about Epta!.\"");
+                //talking about sdu
+            case talkaboutsdubase:
+                textPanel.addParagraph("\"Sure! Totally! I love talking about SDU!.\"");
 
                 options.clearOptions();
-                options.addOption("\"So what exactly do you people do?\"", OptionId.talkabouteptaoverview, null);
+                options.addOption("\"So what exactly do you people do?\"", OptionId.talkaboutsduoverview, null);
                 break;
 
-            case talkabouteptaoverview:
+            case talkaboutsduoverview:
                 textPanel.addParagraph("\"We like, sell stuff! And stuff! It's alot of fun!.\"");
 
                 options.clearOptions();
@@ -223,7 +223,7 @@ public class SDU_NathanDialog implements InteractionDialogPlugin {
                 break;
 
             case talkaboutashleytwo:
-                textPanel.addParagraph("\"Well for starters I run on an Alpha Core base which already puts me leagues ahead of most in terms of decisionmaking, plus I got tinkered with by Gia himself for another pretty big boost, and on top of both of those I've even got some custom made combat protocols programmed specifically for yours truly. I hold the number 1 spots in the consortium for simulated fleet victories and score in combat scenarios 1 through 80 and top 10 ranks in the remaining 20 scenarios. I also have the most hours by far logged in Proelefsi combat scenarios and even have a few hundred in actual combat with it.\"");
+                textPanel.addParagraph("\"Well for starters I run on an Alpha Core base which already puts me leagues ahead of most in terms of decisionmaking, plus I got tinkered with by Gia himself for another pretty big boost, and on top of both of those I've even got some custom made combat protocols programmed specifically for yours truly. I hold the number 1 spots in the consortium for simulated fleet victories and score in combat scenarios 1 through 80 and top 10 ranks in the remaining 20 scenarios. I also have the most hours by far logged in Fundament's combat scenarios and even have a few hundred in actual combat with it.\"");
 
                 options.clearOptions();
                 options.addOption("\"Let's talk about something else\"", OptionId.INIT, null);
@@ -311,12 +311,12 @@ public class SDU_NathanDialog implements InteractionDialogPlugin {
                 break;
 
             case CONT:
-                if(Global.getSector().getPersistentData().get("seven_originaldialog")!=null) {
-                    InteractionDialogPlugin original = (InteractionDialogPlugin) Global.getSector().getPersistentData().get("seven_originaldialog");
+                if(Global.getSector().getPersistentData().get("SDU_originaldialog")!=null) {
+                    InteractionDialogPlugin original = (InteractionDialogPlugin) Global.getSector().getPersistentData().get("SDU_originaldialog");
                     dialog.setPlugin(original);
                     options.clearOptions();
                     FireAll.fire(null, dialog, original.getMemoryMap(), "PopulateOptions");
-                    Global.getSector().getPersistentData().remove("seven_originaldialog");
+                    Global.getSector().getPersistentData().remove("SDU_originaldialog");
                 }else{
                     dialog.dismiss();
                 }

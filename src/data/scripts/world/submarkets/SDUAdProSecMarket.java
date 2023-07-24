@@ -2,11 +2,7 @@ package data.scripts.world.submarkets;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.*;
-import com.fs.starfarer.api.campaign.econ.CommodityOnMarketAPI;
-import com.fs.starfarer.api.campaign.econ.SubmarketAPI;
-import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipHullSpecAPI;
-import com.fs.starfarer.api.combat.WeaponAPI;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.fleet.FleetMemberType;
 import com.fs.starfarer.api.fleet.ShipRolePick;
@@ -14,22 +10,11 @@ import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.ids.ShipRoles;
 import com.fs.starfarer.api.impl.campaign.ids.Tags;
 import com.fs.starfarer.api.impl.campaign.submarkets.BaseSubmarketPlugin;
-import com.fs.starfarer.api.impl.campaign.submarkets.OpenMarketPlugin;
-import com.fs.starfarer.api.loading.FighterWingSpecAPI;
-import com.fs.starfarer.api.loading.WeaponSpecAPI;
-import com.fs.starfarer.api.util.Highlights;
-import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.util.WeightedRandomPicker;
-import org.lazywizard.lazylib.MathUtils;
 
-import java.awt.*;
-import java.util.HashSet;
-import java.util.Random;
-import java.util.Set;
+public class SDUAdProSecMarket extends BaseSubmarketPlugin {
 
-public class SevencorpProtectorsMarket extends BaseSubmarketPlugin {
-
-    public SevencorpProtectorsMarket() {
+    public SDUAdProSecMarket() {
     }
 
     @Override
@@ -41,6 +26,8 @@ public class SevencorpProtectorsMarket extends BaseSubmarketPlugin {
 
         CargoAPI cargo = getCargo();
 
+        cargo.getMothballedShips().clear();
+
         //pruneWeapons(1f);
 
         // 50% chance per stack in the cargo to remove that stack
@@ -51,8 +38,6 @@ public class SevencorpProtectorsMarket extends BaseSubmarketPlugin {
             }
         }
         cargo.removeEmptyStacks();
-        cargo.addCommodity("marines", MathUtils.getRandomNumberInRange(500,2500));
-        cargo.addCommodity("hand_weapons", MathUtils.getRandomNumberInRange(500,2500));
         addShips();
         cargo.sort();
     }
@@ -61,9 +46,10 @@ public class SevencorpProtectorsMarket extends BaseSubmarketPlugin {
     {
         if (member.getHullSpec().isDHull()) return false;
         if (member.getHullSpec().hasTag(Tags.RESTRICTED)) return false;
+        if (member.getHullSpec().hasTag(Tags.UNRECOVERABLE)) return false;
         if (member.getFleetPointCost() < requiredFP) return false; //quality check
         if (member.getHullSpec().getHints().contains(ShipHullSpecAPI.ShipTypeHints.STATION)) return false;
-        if (!member.getHullSpec().getBuiltInMods().contains("strikeCraft")) return false;
+        if (!member.isPhaseShip()) return false;
 
         return true;
     }

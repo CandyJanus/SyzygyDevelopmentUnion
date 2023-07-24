@@ -46,15 +46,15 @@ public class MissionDefinition implements MissionDefinitionPlugin {
         // files in data/variants and data/variants/fighters
         FleetMemberAPI member = api.addToFleet(FleetSide.PLAYER, "SDU_ananke_gift", FleetMemberType.SHIP, "Ananke's Gift", true);
 
-        FactionAPI sevencorp = Global.getSector().getFaction("sevencorp");
+        FactionAPI SDU = Global.getSector().getFaction("SDU");
         FactionAPI ludd = Global.getSector().getFaction("luddic_path");
         FactionAPI TT = Global.getSector().getFaction("tritachyon");
-        PersonAPI officer = sevencorp.createRandomPerson(FullName.Gender.MALE);
+        PersonAPI officer = SDU.createRandomPerson(FullName.Gender.MALE);
         officer.getStats().setSkillLevel(Skills.HELMSMANSHIP, 2);
         officer.getStats().setSkillLevel(Skills.SYSTEMS_EXPERTISE,2);
         officer.getStats().setSkillLevel("gunnery_implants",2);
         officer.getStats().setLevel(1);
-        officer.setFaction(sevencorp.getId());
+        officer.setFaction(SDU.getId());
         officer.setPersonality(Personalities.STEADY);
         officer.getName().setFirst("Accursed");
         officer.getName().setLast("Warrior");
@@ -209,8 +209,8 @@ public class MissionDefinition implements MissionDefinitionPlugin {
             }
 
             for (FleetMemberAPI member : Global.getCombatEngine().getFleetManager(FleetSide.ENEMY).getDeployedCopy()){
-                if(!member.getVariant().hasHullMod("seven_finalrites")&&member.getCaptain()!=null&&member.getCaptain().getPersonalityAPI().getId().equals("reckless")){
-                    member.getVariant().addMod("seven_finalrites");
+                if(!member.getVariant().hasHullMod("SDU_finalrites")&&member.getCaptain()!=null&&member.getCaptain().getPersonalityAPI().getId().equals("reckless")){
+                    member.getVariant().addMod("SDU_finalrites");
                 }
                 if(member.getCaptain().getName().getLast().equals("Albright")){
                     member.getStats().getBallisticRoFMult().modifyMult("lole",3.5f);

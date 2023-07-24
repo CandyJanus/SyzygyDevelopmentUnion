@@ -1,11 +1,11 @@
 id,name,faction,desc,script,icon,order
-SevencorpProtectorsMarket,Protectors Market,sevencorp,A market ran by the Protectors which primarily sells mecha and marine equipment,data.scripts.world.submarkets.SevencorpProtectorsMarket,,7779
-SevencorpSyzygyMarket,Syzygy Market,sevencorp,A market ran by Syzygy Actuators which primarily sells weapons,data.scripts.world.submarkets.SevencorpSyzygyMarket,,7780
-SevencorpKantinaCombineMarket,Kantina Combine Market,sevencorp,A market ran by the Kantina Combine which primarily sells drugs and other illicit commodities,data.scripts.world.submarkets.SevencorpKantinaCombineMarket,,7781
-SevencorpChutnamSecurityMarket,Chutnam Security Market,sevencorp,A market ran by Chutnam Security which sells all sorts of goods from other factions,data.scripts.world.submarkets.SevencorpChutnamSecurityMarket,,7782
-SevencorpEliteBuyersMarket,Elite Buyers Market,sevencorp,An Epta Elite Buyers market which stocks private wares given only to Epta's most trusted business partners,data.scripts.world.submarkets.SevencorpEliteBuyersMarket,,7783
-SevencorpAdProSecMarket,AdProSec Market,sevencorp,A market ran by AdProSec which primarily sells phase ships,data.scripts.world.submarkets.SevencorpAdProSecMarket,,7784
-SevencorpShootingStarsMarket,Shooting Stars Market,sevencorp,A market ran by Shooting Stars which primarily sells small quantities of superships,data.scripts.world.submarkets.SevencorpShootingStarsMarket,,7785
+SDUProtectorsMarket,Protectors Market,SDU,A market ran by the Protectors which primarily sells mecha and marine equipment,data.scripts.world.submarkets.SDUProtectorsMarket,,7779
+SDUSyzygyMarket,Syzygy Market,SDU,A market ran by Syzygy Actuators which primarily sells weapons,data.scripts.world.submarkets.SDUSyzygyMarket,,7780
+SDUKantinaCombineMarket,Kantina Combine Market,SDU,A market ran by the Kantina Combine which primarily sells drugs and other illicit commodities,data.scripts.world.submarkets.SDUKantinaCombineMarket,,7781
+SDUChutnamSecurityMarket,Chutnam Security Market,SDU,A market ran by Chutnam Security which sells all sorts of goods from other factions,data.scripts.world.submarkets.SDUChutnamSecurityMarket,,7782
+SDUEliteBuyersMarket,Elite Buyers Market,SDU,An SDU market which stocks private wares given only to SDU's most trusted business partners,data.scripts.world.submarkets.SDUEliteBuyersMarket,,7783
+SDUAdProSecMarket,AdProSec Market,SDU,A market ran by AdProSec which primarily sells phase ships,data.scripts.world.submarkets.SDUAdProSecMarket,,7784
+SDUShootingStarsMarket,Shooting Stars Market,SDU,A market ran by Shooting Stars which primarily sells small quantities of superships,data.scripts.world.submarkets.SDUShootingStarsMarket,,7785
 ,,,,,,
 ,,,,,,
 ,,,,,,

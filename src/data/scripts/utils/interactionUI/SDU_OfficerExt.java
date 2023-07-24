@@ -46,7 +46,7 @@ public class SDU_OfficerExt {
 
 
     public SDU_OfficerExt create(PersonAPI person, String id, boolean standardformat, String faction, String location, String caste, String alignment, String personality, String greeting, String cabin, String homedescription, String faith, String shortgoal, String longgoal, String stayreason, String leavereason, String upbringing, String parents, String occupation, ArrayList<String> hobbies, ArrayList<String> skills, ArrayList<String> randomtopics, ArrayList<String> likes, ArrayList<String> dislikes, String romance) {
-    //public seven_OfficerExt create(PersonAPI person, String id, Pairs<String,Object>){
+    //public SDU_OfficerExt create(PersonAPI person, String id, Pairs<String,Object>){
         this.person=person;
         this.id=id;
 

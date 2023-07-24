@@ -9,7 +9,7 @@ import org.lazywizard.lazylib.MathUtils;
 
 import java.util.Set;
 
-public class SevencorpKantinaCombineMarket extends BaseSubmarketPlugin {
+public class SDUKantinaCombineMarket extends BaseSubmarketPlugin {
     private static WeightedRandomPicker<String> hullmodPicker = new WeightedRandomPicker();
     public static float ECON_UNIT_MULT_EXTRA;
     public static float ECON_UNIT_MULT_PRODUCTION;
@@ -17,7 +17,7 @@ public class SevencorpKantinaCombineMarket extends BaseSubmarketPlugin {
     public static float ECON_UNIT_MULT_DEFICIT;
     public static Set<String> SPECIAL_COMMODITIES;
 
-    public SevencorpKantinaCombineMarket() {
+    public SDUKantinaCombineMarket() {
     }
 
 

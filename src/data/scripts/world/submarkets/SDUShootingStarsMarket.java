@@ -16,9 +16,9 @@ import com.fs.starfarer.api.util.WeightedRandomPicker;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SevencorpShootingStarsMarket extends BaseSubmarketPlugin {
+public class SDUShootingStarsMarket extends BaseSubmarketPlugin {
 
-    public SevencorpShootingStarsMarket() {
+    public SDUShootingStarsMarket() {
     }
 
     @Override
@@ -86,7 +86,7 @@ public class SevencorpShootingStarsMarket extends BaseSubmarketPlugin {
         supershippicker[13][1]="diableavionics_miniGust_Hull";
 
         supershippicker[14][0]=null;
-        supershippicker[14][1]="seven_aeolus_Hull";
+        supershippicker[14][1]="SDU_aeolus_Hull";
 
         supershippicker[15][0]="tahlan";
         supershippicker[15][1]="tahlan_Vale_Hull";
@@ -161,10 +161,10 @@ public class SevencorpShootingStarsMarket extends BaseSubmarketPlugin {
         supershippicker[38][1]="diableavionics_stolas_Hull";
 
         supershippicker[39][0]=null;
-        supershippicker[39][1]="seven_zaku2_Hull";
+        supershippicker[39][1]="SDU_zaku2_Hull";
 
         supershippicker[40][0]=null;
-        supershippicker[40][1]="seven_harbinger_2_Hull";
+        supershippicker[40][1]="SDU_harbinger_Hull";
 
         WeightedRandomPicker<String> superships = new WeightedRandomPicker<>(itemGenRandom);
         for (int i = 0; i < 40; i++) {

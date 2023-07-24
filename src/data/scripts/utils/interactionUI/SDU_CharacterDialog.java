@@ -79,7 +79,7 @@ public class SDU_CharacterDialog implements InteractionDialogPlugin {
             textPanel.addParagraph(text, Global.getSettings().getColor("buttonText"));
         }
 
-        Color sc = Global.getSector().getFaction("sevencorp").getBaseUIColor();
+        Color sc = Global.getSector().getFaction("SDU").getBaseUIColor();
 
         if(optionData==null||optionData.equals(null)) {
             textPanel.addParagraph("This officer does not have the needed tag to generate this dialogue.");

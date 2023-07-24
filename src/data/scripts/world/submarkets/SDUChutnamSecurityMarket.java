@@ -20,11 +20,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-public class SevencorpChutnamSecurityMarket extends BaseSubmarketPlugin {
+public class SDUChutnamSecurityMarket extends BaseSubmarketPlugin {
 
-    private static org.apache.log4j.Logger log = Global.getLogger(SevencorpChutnamSecurityMarket.class);
+    private static org.apache.log4j.Logger log = Global.getLogger(SDUChutnamSecurityMarket.class);
 
-    public SevencorpChutnamSecurityMarket() {
+    public SDUChutnamSecurityMarket() {
     }
 
     @Override
@@ -114,7 +114,7 @@ public class SevencorpChutnamSecurityMarket extends BaseSubmarketPlugin {
             }
         }
 
-        while(!sector.getFaction("sevencorp").getRelationshipLevel(faction).isAtWorst(RepLevel.FAVORABLE) || blacklist.contains(faction)){
+        while(!sector.getFaction("SDU").getRelationshipLevel(faction).isAtWorst(RepLevel.FAVORABLE) || blacklist.contains(faction)){
             faction = Global.getSector().getAllFactions().get(MathUtils.getRandomNumberInRange(0,Global.getSector().getAllFactions().size()-1));
         }
         log.info("faction picked: "+faction);
@@ -300,7 +300,7 @@ public class SevencorpChutnamSecurityMarket extends BaseSubmarketPlugin {
     @Override
     public float getTariff() {
         RepLevel level = submarket.getFaction().getRelationshipLevel(Global.getSector().getFaction(Factions.PLAYER));
-//        RepLevel level = Global.getSector().getImportantPeople().getPerson("epta_triela").getRelToPlayer().getLevel();
+//        RepLevel level = Global.getSector().getImportantPeople().getPerson("sdu_triela").getRelToPlayer().getLevel();
         float mult = 1f;
         switch (level)
         {

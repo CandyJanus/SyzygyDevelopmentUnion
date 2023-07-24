@@ -47,15 +47,13 @@ public class SDU_ModPlugin extends BaseModPlugin {
         }
 
         if (!haveNexerelin || exerelin.campaign.SectorManager.getManager().isCorvusMode()) {
-            MarketAPI proelefsi = new SDU_fundament_mainscript().generate(Global.getSector());
+            MarketAPI fundament = new SDU_fundament_mainscript().generate(Global.getSector());
             new SDU_mobile_storefront().generate(Global.getSector());
 
-            SDU_CharacterFactory.createDecimus(proelefsi);
-            SDU_CharacterFactory.createAshley(proelefsi);
-            //eptaCharacterFactory.createAnodyne(proelefsi);
-            //eptaCharacterFactory.createTriela(proelefsi);
+            SDU_CharacterFactory.createDecimus(fundament);
+            SDU_CharacterFactory.createAshley(fundament);
 
-            SDU_util_sysgen.exploreAll(proelefsi.getStarSystem());
+            SDU_util_sysgen.exploreAll(fundament.getStarSystem());
 
             data.put("SDU_generated", "1.0.0");
         }
@@ -74,8 +72,8 @@ public class SDU_ModPlugin extends BaseModPlugin {
             SDU_OfficerExt_List EOList = new SDU_OfficerExt_List().create();
         }
 
-        //if(!Global.getSector().getIntelManager().hasIntelOfClass(seven_CharacterInteractIntel.class)) {
-        //    Global.getSector().getIntelManager().addIntel(new seven_CharacterInteractIntel(), true);
+        //if(!Global.getSector().getIntelManager().hasIntelOfClass(SDU_CharacterInteractIntel.class)) {
+        //    Global.getSector().getIntelManager().addIntel(new SDU_CharacterInteractIntel(), true);
         //}
 
         boolean loadIntoExistingSave=MagicSettings.getBoolean("SyzygyDevelopmentUnion","loadIntoExistingSave");
@@ -103,16 +101,12 @@ public class SDU_ModPlugin extends BaseModPlugin {
             //nuke: I'm pretty sure those duplicate layers of protection don't even work and only the memkey matters.
             if (!haveNexerelin || SectorManager.getManager().isCorvusMode()) {
                 if (!data.containsKey("SDU_generated")){
-                    MarketAPI proelefsi = new SDU_fundament_mainscript().generate(Global.getSector());
-                    SDU_util_sysgen.exploreAll(proelefsi.getStarSystem());
+                    MarketAPI fundament = new SDU_fundament_mainscript().generate(Global.getSector());
+                    SDU_util_sysgen.exploreAll(fundament.getStarSystem());
                     new SDU_mobile_storefront().generate(Global.getSector());
 
-                    SDU_CharacterFactory.createDecimus(proelefsi);
-                    SDU_CharacterFactory.createAshley(proelefsi);
-//                    eptaCharacterFactory.createAnodyne(proelefsi);
-//                    eptaCharacterFactory.createTriela(proelefsi);
-//                    eptaCharacterFactory.createRoseKanta(proelefsi);
-//                    eptaCharacterFactory.createAdProSecSecretary(proelefsi);
+                    SDU_CharacterFactory.createDecimus(fundament);
+                    SDU_CharacterFactory.createAshley(fundament);
                     data.put("SDU_generated", "version 1.0.0");
                 }
 
@@ -122,24 +116,24 @@ public class SDU_ModPlugin extends BaseModPlugin {
             if (haveArmaa) {
 
                 // adding the Galevis
-                sector.getFaction("sevencorp").getKnownShips().add("seven_galevis");
-                sector.getFaction("sevencorp").addUseWhenImportingShip("seven_galevis");
+                sector.getFaction("SDU").getKnownShips().add("SDU_galevis");
+                sector.getFaction("SDU").addUseWhenImportingShip("SDU_galevis");
                 // adding the Skopefetis
-                sector.getFaction("sevencorp").getKnownShips().add("seven_skopefetis");
-                sector.getFaction("sevencorp").addUseWhenImportingShip("seven_skopefetis");
+                sector.getFaction("SDU").getKnownShips().add("SDU_skopefetis");
+                sector.getFaction("SDU").addUseWhenImportingShip("SDU_skopefetis");
                 // adding both Zakus
-                sector.getFaction("sevencorp").getKnownShips().add("seven_zaku");
-                sector.getFaction("sevencorp").addUseWhenImportingShip("seven_zaku");
-                sector.getFaction("sevencorp").getKnownShips().add("seven_zaku2");
-                sector.getFaction("sevencorp").addUseWhenImportingShip("seven_zaku2");
+                sector.getFaction("SDU").getKnownShips().add("SDU_zaku");
+                sector.getFaction("SDU").addUseWhenImportingShip("SDU_zaku");
+                sector.getFaction("SDU").getKnownShips().add("SDU_zaku2");
+                sector.getFaction("SDU").addUseWhenImportingShip("SDU_zaku2");
 
-                //if (!seven_frigateautoforge.ships.contains("seven_galevis_integrated"))
-                //    seven_frigateautoforge.ships.add("seven_galevis_integrated");
-                //if (!seven_frigateautoforge.ships.contains("seven_skopefetis_integrated"))
-                //    seven_frigateautoforge.ships.add("seven_skopefetis_integrated");
+                //if (!SDU_frigateautoforge.ships.contains("SDU_galevis_integrated"))
+                //    SDU_frigateautoforge.ships.add("SDU_galevis_integrated");
+                //if (!SDU_frigateautoforge.ships.contains("SDU_skopefetis_integrated"))
+                //    SDU_frigateautoforge.ships.add("SDU_skopefetis_integrated");
             }
 
-            Global.getSector().getFaction("sevencorp").clearShipRoleCache();
+            Global.getSector().getFaction("SDU").clearShipRoleCache();
 
             if(haveNexerelin){
 
@@ -162,11 +156,11 @@ public class SDU_ModPlugin extends BaseModPlugin {
 
         //if (haveArmaa) {
         //            // adding the Galevis
-        //            Global.getSettings().getHullSpec("seven_galevis").addTag("sevencorp");
-        //            Global.getSettings().getHullSpec("seven_galevis").addTag("epta_phaseship_bp");
+        //            Global.getSettings().getHullSpec("SDU_galevis").addTag("SDU");
+        //            Global.getSettings().getHullSpec("SDU_galevis").addTag("SDU_phaseship_bp");
         //            // adding the Skopefetis
-        //            Global.getSettings().getHullSpec("seven_skopefetis").addTag("sevencorp");
-        //            Global.getSettings().getHullSpec("seven_skopefetis").addTag("epta_phaseship_bp");
+        //            Global.getSettings().getHullSpec("SDU_skopefetis").addTag("SDU");
+        //            Global.getSettings().getHullSpec("SDU_skopefetis").addTag("SDU_phaseship_bp");
         //        }
     }
 

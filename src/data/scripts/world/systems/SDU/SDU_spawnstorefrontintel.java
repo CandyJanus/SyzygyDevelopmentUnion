@@ -71,7 +71,7 @@ public class SDU_spawnstorefrontintel extends BaseIntelPlugin {
         }else if(subcorp==6){
             info.addPara("We at the Shooting Stars believe in quality above all else; that's why we've procured one of the finest superships in the sector for your captaining enjoyment. As usual this is on a first come first serve basis so hurry down so that you don't miss this rare opportunity.", pad);
         }else if(subcorp==7){
-            info.addPara("Make sure to come visit our primary manufactory and crown jewel of the Epta Consortium's business holdings; Proelefsi Epta, where all your technological dreams come true.", pad);
+            info.addPara("Make sure to come visit our primary manufactory and crown jewel of SDU's holdings; Fundament, where all your technological dreams come true.", pad);
         }
 
     }
@@ -131,7 +131,7 @@ public class SDU_spawnstorefrontintel extends BaseIntelPlugin {
         }else if(subcorp==6){
             return "Shooting Stars Tradebase";
         }else if(subcorp==7) {
-            return "Proelefsi Epta";
+            return "Fundament";
         }else{
             return "sth went wrong";
         }

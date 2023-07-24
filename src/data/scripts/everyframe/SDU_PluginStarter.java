@@ -21,7 +21,7 @@ public class SDU_PluginStarter extends BaseEveryFrameCombatPlugin {
     @Override
     public void init(CombatEngineAPI engine) {
         if (!addedOnce && Global.getSettings().getMissionScore("TheGift") > 0 && Global.getSettings().getModManager().isModEnabled("nexerelin")) {
-            NexFactionConfig faction = NexConfig.getFactionConfig("sevencorp");
+            NexFactionConfig faction = NexConfig.getFactionConfig("SDU");
             StartFleetSet fleetSet = faction.getStartFleetSet(StartFleetType.SUPER.name());
             List<String> anankeFleet = new ArrayList<>(1);
             anankeFleet.add("SDU_ananke_gift");

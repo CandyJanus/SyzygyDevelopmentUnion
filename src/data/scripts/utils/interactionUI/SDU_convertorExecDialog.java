@@ -57,7 +57,7 @@ public class SDU_convertorExecDialog implements InteractionDialogPlugin {
             textPanel.addParagraph(text, Global.getSettings().getColor("buttonText"));
         }
 
-        Color sc = Global.getSector().getFaction("sevencorp").getBaseUIColor();
+        Color sc = Global.getSector().getFaction("SDU").getBaseUIColor();
 
         MemoryAPI memory = Global.getSector().getMemoryWithoutUpdate();
 

@@ -27,7 +27,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
-public class SevencorpSyzygyMarket extends BaseSubmarketPlugin {
+public class SDUSyzygyMarket extends BaseSubmarketPlugin {
     private static WeightedRandomPicker<String> hullmodPicker = new WeightedRandomPicker();
     public static float ECON_UNIT_MULT_EXTRA;
     public static float ECON_UNIT_MULT_PRODUCTION;
@@ -35,7 +35,7 @@ public class SevencorpSyzygyMarket extends BaseSubmarketPlugin {
     public static float ECON_UNIT_MULT_DEFICIT;
     public static Set<String> SPECIAL_COMMODITIES;
 
-    public SevencorpSyzygyMarket() {
+    public SDUSyzygyMarket() {
     }
 
     @Override
@@ -56,7 +56,7 @@ public class SevencorpSyzygyMarket extends BaseSubmarketPlugin {
                 cargo.removeItems(s.getType(), s.getData(), qty );
             }
         }
-        addWeapons(30,60,8,"sevencorp");
+        addWeapons(30,60,8,"SDU");
         if(Math.random()>0.7){
             cargo.addWeapons("SDU_relativitycannon",1);
         }

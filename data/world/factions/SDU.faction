@@ -131,7 +131,7 @@
 		"encounter_hostile":"",
 		"encounter_friendly":"",
 	},
-	"internalComms":"sevencorp_internal",
+	"internalComms":"SDU_internal",
 
 
 	"portraits":{

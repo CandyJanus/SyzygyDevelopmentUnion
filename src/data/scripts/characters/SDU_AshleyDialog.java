@@ -15,11 +15,11 @@ public class SDU_AshleyDialog implements InteractionDialogPlugin {
     public static enum OptionId {
         INIT,
         CONT,
-        talkabouteptabase,
+        talkaboutsdubase,
         talkaboutotherbusinessesbase,
         talkaboutdecimusbase,
         shoottheshit,
-        talkabouteptaoverview, talkabouteptaoverviewtwo, leave, talkaboutsyzygy, talkaboutprotectors, talkaboutkantina, talkaboutsstars, talkaboutchutnam, talkaboutadprosec, talkaboutsyzygyconflictofinterest, talkaboutnathan, talkaboutrose, talkaboutashley, talkabouttriela, talkaboutadproadmins, talkaboutanodyne, talkaboutanodynetwo, talkaboutdecimustwo, shoottheshitfof, shoottheshitfofneverplayed, shoottheshitfofneverplayedtwo, shoottheshitfofstack, shoottheshitfof1v1, talkaboutdecimus, talkaboutashleybase, talkaboutashleytwo;
+        talkaboutsduoverview, talkaboutsduoverviewtwo, leave, talkaboutsyzygy, talkaboutprotectors, talkaboutkantina, talkaboutsstars, talkaboutchutnam, talkaboutadprosec, talkaboutsyzygyconflictofinterest, talkaboutnathan, talkaboutrose, talkaboutashley, talkabouttriela, talkaboutadproadmins, talkaboutanodyne, talkaboutanodynetwo, talkaboutdecimustwo, shoottheshitfof, shoottheshitfofneverplayed, shoottheshitfofneverplayedtwo, shoottheshitfofstack, shoottheshitfof1v1, talkaboutdecimus, talkaboutashleybase, talkaboutashleytwo;
     }
 
     protected InteractionDialogAPI dialog;
@@ -58,7 +58,7 @@ public class SDU_AshleyDialog implements InteractionDialogPlugin {
             textPanel.addParagraph(text, Global.getSettings().getColor("buttonText"));
         }
 
-        Color sc = Global.getSector().getFaction("sevencorp").getBaseUIColor();
+        Color sc = Global.getSector().getFaction("SDU").getBaseUIColor();
 
         MemoryAPI memory = Global.getSector().getMemoryWithoutUpdate();
         
@@ -69,21 +69,21 @@ public class SDU_AshleyDialog implements InteractionDialogPlugin {
                 visual.showPersonInfo(character, true);
 
                 options.clearOptions();
-                options.addOption("\"I was wondering a bit about the Epta Consortium.\"", OptionId.talkabouteptabase, null);
+                options.addOption("\"I was wondering a bit about the SDU Consortium.\"", OptionId.talkaboutsdubase, null);
                 options.addOption("\"What do you think about the other businesses and leaders in the Consortium?\"", OptionId.talkaboutotherbusinessesbase, null);
                 options.addOption("\"Who are you?\"", OptionId.talkaboutashleybase, null);
                 options.addOption("\"Bye\"", OptionId.CONT, null);
                 break;
 
-                //talking about epta
-            case talkabouteptabase:
-                textPanel.addParagraph("\"Sure! Totally! I love talking about Epta!.\"");
+                //talking about sdu
+            case talkaboutsdubase:
+                textPanel.addParagraph("\"Sure! Totally! I love talking about SDU!.\"");
 
                 options.clearOptions();
-                options.addOption("\"So what exactly do you people do?\"", OptionId.talkabouteptaoverview, null);
+                options.addOption("\"So what exactly do you people do?\"", OptionId.talkaboutsduoverview, null);
                 break;
 
-            case talkabouteptaoverview:
+            case talkaboutsduoverview:
                 textPanel.addParagraph("\"We like, sell stuff! And stuff! It's a lot of fun!.\"");
 
                 options.clearOptions();

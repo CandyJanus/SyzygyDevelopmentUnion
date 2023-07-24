@@ -54,7 +54,7 @@ public class SDU_mobile_storefront {
     //Size of the engine plume particles, minimum and maximum
     private static final float ENGINE_PARTICLE_SIZE_MIN = 8f;
     private static final float ENGINE_PARTICLE_SIZE_MAX = 12f;
-    //Distance from the center of Proelefsi that the engine plume starts spawning
+    //Distance from the center of fundament that the engine plume starts spawning
     private static final float ENGINE_SPAWN_DISTANCE = 70f;
     //How "wide" the plume of the engine is at the base of the engine
     private static final float ENGINE_BASE_WIDTH = 20f;
@@ -84,61 +84,61 @@ public class SDU_mobile_storefront {
             switch (i){
                 case 0:
                     systemname = "Syzygy Actuators Tradebase";
-                    stationid = "seven_syzygyacutators_base";
-                    stationname = "Epta Consortium Trading Station: Syzygy Actuators";
+                    stationid = "SDU_syzygyacutators_base";
+                    stationname = "SDU Trading Station: Syzygy Actuators";
                     jumpid = "syzygy_base_rift";
                     jumpname = "Syzygy Actuators Rift";
-                    submarket = "SevencorpSyzygyMarket";
+                    submarket = "SDUSyzygyMarket";
                     subfaction = 1;
                     break;
 
                 case 1:
                     systemname = "Kantina Combine Tradebase";
-                    stationid = "seven_kantinacombine_base";
-                    stationname = "Epta Consortium Trading Station: Kantina Combine";
+                    stationid = "SDU_kantinacombine_base";
+                    stationname = "SDU Trading Station: Kantina Combine";
                     jumpid = "kantina_base_rift";
                     jumpname = "Kantina Combine Rift";
-                    submarket = "SevencorpKantinaCombineMarket";
+                    submarket = "SDUKantinaCombineMarket";
                     subfaction = 3;
                     break;
 
                 case 2:
                     systemname = "Chutnam Security Tradebase";
-                    stationid = "seven_chutnamsecurity_base";
-                    stationname = "Epta Consortium Trading Station: Chutnam Security";
+                    stationid = "SDU_chutnamsecurity_base";
+                    stationname = "SDU Trading Station: Chutnam Security";
                     jumpid = "chutnam_base_rift";
                     jumpname = "Chutnam Security Rift";
-                    submarket = "SevencorpChutnamSecurityMarket";
+                    submarket = "SDUChutnamSecurityMarket";
                     subfaction = 4;
                     break;
 
                 case 3:
                     systemname = "AdProSec Tradebase";
-                    stationid = "seven_adprosec_base";
-                    stationname = "Epta Consortium Trading Station: AdProSec";
+                    stationid = "SDU_adprosec_base";
+                    stationname = "SDU Trading Station: AdProSec";
                     jumpid = "adprosec_base_rift";
                     jumpname = "AdProSec Rift";
-                    submarket = "SevencorpAdProSecMarket";
+                    submarket = "SDUAdProSecMarket";
                     subfaction = 5;
                     break;
 
                 case 4:
                     systemname = "Shooting Stars Tradebase";
-                    stationid = "seven_shootingstars_base";
-                    stationname = "Epta Consortium Trading Station: Shooting Stars";
+                    stationid = "SDU_shootingstars_base";
+                    stationname = "SDU Trading Station: Shooting Stars";
                     jumpid = "shootingstars_base_rift";
                     jumpname = "Shooting Stars Rift";
-                    submarket = "SevencorpShootingStarsMarket";
+                    submarket = "SDUShootingStarsMarket";
                     subfaction = 6;
                     break;
 
                 case 5:
                     systemname = "Protectors Garrison Tradebase";
-                    stationid = "seven_protectorsgarrison_base";
-                    stationname = "Epta Consortium Trading Station: Protectors Garrison";
+                    stationid = "SDU_protectorsgarrison_base";
+                    stationname = "SDU Trading Station: Protectors Garrison";
                     jumpid = "protectors_base_rift";
                     jumpname = "Protectors Garrison Rift";
-                    submarket = "SevencorpProtectorsMarket";
+                    submarket = "SDUProtectorsMarket";
                     subfaction = 2;
                     break;
 
@@ -160,15 +160,15 @@ public class SDU_mobile_storefront {
             // Sets light color in entire system, affects all entities
             system.setLightColor(new Color(255, 255, 255));
 
-            // Adds the giant space station Proelefsi
-            SectorEntityToken tradebase = system.addCustomEntity(stationid, stationname, "tradestation_station", "sevencorp");
+            // Adds the giant space station fundament
+            SectorEntityToken tradebase = system.addCustomEntity(stationid, stationname, "tradestation_station", "SDU");
             tradebase.setCircularOrbitPointingDown(centerpoint, 0f, 50f, 99999999999f);
 
-            // Add the marketplace to Proelefsi ---------------
+            // Add the marketplace to fundament ---------------
             MarketAPI tradebase_market = SDU_util_sysgen.addMarketplace("SDU",
                     tradebase,
                     null,
-                    "Epta Tradestation Market", // name of the market
+                    "SDU Tradestation Market", // name of the market
                     3, // size of the market
                     new ArrayList<>(
                             Arrays.asList( // list of market conditions
@@ -183,7 +183,7 @@ public class SDU_mobile_storefront {
                                     Submarkets.SUBMARKET_BLACK,
                                     Submarkets.SUBMARKET_OPEN,
                                     Submarkets.SUBMARKET_STORAGE,
-                                    "SevencorpEliteBuyersMarket",
+                                    "SDUEliteBuyersMarket",
                                     submarket
                             )
                     ),
@@ -203,7 +203,7 @@ public class SDU_mobile_storefront {
 
             tradebase_market.setHidden(false);
 
-            // Jump point : has a miniature script setting its rotation to be oppositely-locked to Proelefsi ---------------
+            // Jump point : has a miniature script setting its rotation to be oppositely-locked to fundament ---------------
             JumpPointAPI jumpPoint = Global.getFactory().createJumpPoint(jumpid, jumpname);
             jumpPoint.setCircularOrbit(centerpoint, 180f, 900f, 99999999999f);
             system.addEntity(jumpPoint);
@@ -217,7 +217,7 @@ public class SDU_mobile_storefront {
 
             sector.addScript(new MovingStarsystemScript(tradebase, system, subfaction));
 
-            Global.getSector().getIntelManager().addIntel(new SDU_spawnstorefrontintel(tradebase_market, "sevencorp",subfaction));
+            Global.getSector().getIntelManager().addIntel(new SDU_spawnstorefrontintel(tradebase_market, "SDU",subfaction));
         }
     }
 
@@ -236,7 +236,7 @@ public class SDU_mobile_storefront {
         public void advance(float amount) {
 
             if(target!=null) {
-                if (!target.getFaction().equals(Global.getSector().getFaction("sevencorp")) && Global.getSector().getStarSystem("proelefsi").getEntityById("seven_proelefsi_station") != null) {
+                if (!target.getFaction().equals(Global.getSector().getFaction("SDU")) && Global.getSector().getStarSystem("fundament").getEntityById("SDU_fundament_station") != null) {
                     target.getMarket().getHazard().modifyFlat("hostilemachinery", 2f);
                     if(!Global.getSector().getPersistentData().containsKey(target.getId()+"datetaken")) {
                         Global.getSector().getPersistentData().put(target.getId()+"datetaken",Global.getSector().getClock().getTimestamp());
@@ -246,14 +246,14 @@ public class SDU_mobile_storefront {
                         target.getMarket().getStability().modifyFlat("hostilemachinery", red, "hostile machinery");
 
                         if(red == -10) {
-                            target.setFaction("sevencorp");
-                            target.getMarket().setFactionId("sevencorp");
-                            target.getMarket().setAdmin(OfficerManagerEvent.createAdmin(Global.getSector().getFaction("sevencorp"),2,null));
+                            target.setFaction("SDU");
+                            target.getMarket().setFactionId("SDU");
+                            target.getMarket().setAdmin(OfficerManagerEvent.createAdmin(Global.getSector().getFaction("SDU"),2,null));
                         }
 
                         //if(target.getMarket().getStability().getModifiedValue()<=1f){
-                        //                            target.setFaction("sevencorp");
-                        //                            target.getMarket().setFactionId("sevencorp");
+                        //                            target.setFaction("SDU");
+                        //                            target.getMarket().setFactionId("SDU");
                         //                            target.getMarket().getStability().removeTemporaryMod("hostilemachinery");
                         //                            Global.getSector().getPersistentData().remove(target.getId()+"datetaken");
                         //                        }
@@ -361,7 +361,7 @@ public class SDU_mobile_storefront {
                 //We also spawn streaking stars when the player is in the system
                 spawnStreakingStars(amount);
 
-                //We *also* spawn a particle plume behind Proelefsi itself
+                //We *also* spawn a particle plume behind fundament itself
                 spawnEnginePlume(amount, starStation);
             } else {
                 runOnce = true;

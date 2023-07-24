@@ -67,7 +67,7 @@ public class SDU_fundament_mainscript {
     //Size of the engine plume particles, minimum and maximum
     private static final float ENGINE_PARTICLE_SIZE_MIN = 8f;
     private static final float ENGINE_PARTICLE_SIZE_MAX = 12f;
-    //Distance from the center of Proelefsi that the engine plume starts spawning
+    //Distance from the center of Fundament that the engine plume starts spawning
     private static final float ENGINE_SPAWN_DISTANCE = 70f;
     //How "wide" the plume of the engine is at the base of the engine
     private static final float ENGINE_BASE_WIDTH = 20f;
@@ -81,11 +81,11 @@ public class SDU_fundament_mainscript {
 
     //Main generation function
     public MarketAPI generate(SectorAPI sector) {
-        StarSystemAPI system = sector.createStarSystem("Proelefsi");
+        StarSystemAPI system = sector.createStarSystem("Fundament");
 
-        SharedData.getData().getPersonBountyEventData().addParticipatingFaction("sevencorp");
+        SharedData.getData().getPersonBountyEventData().addParticipatingFaction("SDU");
 
-        FactionAPI sevencorp = sector.getFaction("sevencorp");
+        FactionAPI SDU = sector.getFaction("SDU");
         FactionAPI player = sector.getFaction(Factions.PLAYER);
         FactionAPI hegemony = sector.getFaction(Factions.HEGEMONY);
         FactionAPI tritachyon = sector.getFaction(Factions.TRITACHYON);
@@ -101,83 +101,83 @@ public class SDU_fundament_mainscript {
         FactionAPI derelict = sector.getFaction(Factions.DERELICT);
 
         //vanilla factions
-        sevencorp.setRelationship(hegemony.getId(), -1.0f);
-        sevencorp.setRelationship(player.getId(), 0);
-        sevencorp.setRelationship(pirates.getId(), -0.5f);
+        SDU.setRelationship(hegemony.getId(), -1.0f);
+        SDU.setRelationship(player.getId(), 0);
+        SDU.setRelationship(pirates.getId(), -0.5f);
 
-        sevencorp.setRelationship(independent.getId(), 0.5f);
+        SDU.setRelationship(independent.getId(), 0.5f);
 
-        sevencorp.setRelationship(tritachyon.getId(), 0.3f);
+        SDU.setRelationship(tritachyon.getId(), 0.3f);
 
-        sevencorp.setRelationship(kol.getId(), -0.5f);
-        sevencorp.setRelationship(path.getId(), -0.75f);
-        sevencorp.setRelationship(church.getId(), -0.75f);
+        SDU.setRelationship(kol.getId(), -0.5f);
+        SDU.setRelationship(path.getId(), -0.75f);
+        SDU.setRelationship(church.getId(), -0.75f);
 
-        sevencorp.setRelationship(persean.getId(), 0.25f);
-        sevencorp.setRelationship(guard.getId(), 0.25f);
-        sevencorp.setRelationship(diktat.getId(), 0.25f);
+        SDU.setRelationship(persean.getId(), 0.25f);
+        SDU.setRelationship(guard.getId(), 0.25f);
+        SDU.setRelationship(diktat.getId(), 0.25f);
 
 
         //environment
-        sevencorp.setRelationship(remnant.getId(), RepLevel.COOPERATIVE);
-        sevencorp.setRelationship(derelict.getId(), RepLevel.COOPERATIVE);
+        SDU.setRelationship(remnant.getId(), RepLevel.COOPERATIVE);
+        SDU.setRelationship(derelict.getId(), RepLevel.COOPERATIVE);
 
         // mod factions
-        sevencorp.setRelationship("vic", 0f);
-        sevencorp.setRelationship("ironsentinel", -0.49f);
-        sevencorp.setRelationship("ironshell", -0.49f);
+        SDU.setRelationship("vic", 0f);
+        SDU.setRelationship("ironsentinel", -0.49f);
+        SDU.setRelationship("ironshell", -0.49f);
 
-        sevencorp.setRelationship("sylphon", 0.25f);
-        sevencorp.setRelationship("uaf", 0.19f);
-        sevencorp.setRelationship("osiris", 0.5f);
-        sevencorp.setRelationship("mayorate", 0.3f);
-        sevencorp.setRelationship("apex_design", -0.49f);
-        sevencorp.setRelationship("dassault_mikoyan", 0.2f);
-        sevencorp.setRelationship("MVS", 0.3f);
-        sevencorp.setRelationship("vri", 0.7f);
+        SDU.setRelationship("sylphon", 0.25f);
+        SDU.setRelationship("uaf", 0.19f);
+        SDU.setRelationship("osiris", 0.5f);
+        SDU.setRelationship("mayorate", 0.3f);
+        SDU.setRelationship("apex_design", -0.49f);
+        SDU.setRelationship("dassault_mikoyan", 0.2f);
+        SDU.setRelationship("MVS", 0.3f);
+        SDU.setRelationship("vri", 0.7f);
 
-        sevencorp.setRelationship("Coalition", -0.3f);
-        sevencorp.setRelationship("tiandong", 0f);
-        sevencorp.setRelationship("kadur_remnant", -0.3f);
-        sevencorp.setRelationship("blackrock_driveyards", 0.25f);
-        sevencorp.setRelationship("interstellarimperium", 0.25f);
-        sevencorp.setRelationship("HMI", 0.5f);
-        sevencorp.setRelationship("al_ars", -0.25f);
-        sevencorp.setRelationship("SCY", 0.25f);
-        sevencorp.setRelationship("blade_breakers", -0.5f);
-        sevencorp.setRelationship("diableavionics", -0.5f);
-        sevencorp.setRelationship("ORA", 0.25f);
-        sevencorp.setRelationship("gmda", -0.25f);
-        sevencorp.setRelationship("gmda_patrol", -0.25f);
+        SDU.setRelationship("Coalition", -0.3f);
+        SDU.setRelationship("tiandong", 0f);
+        SDU.setRelationship("kadur_remnant", -0.3f);
+        SDU.setRelationship("blackrock_driveyards", 0.25f);
+        SDU.setRelationship("interstellarimperium", 0.25f);
+        SDU.setRelationship("HMI", 0.5f);
+        SDU.setRelationship("al_ars", -0.25f);
+        SDU.setRelationship("SCY", 0.25f);
+        SDU.setRelationship("blade_breakers", -0.5f);
+        SDU.setRelationship("diableavionics", -0.5f);
+        SDU.setRelationship("ORA", 0.25f);
+        SDU.setRelationship("gmda", -0.25f);
+        SDU.setRelationship("gmda_patrol", -0.25f);
 
-        sevencorp.setRelationship("tahlan_legioinfernalis", -0.15f);
-        sevencorp.setRelationship("yrxp", 0f);
+        SDU.setRelationship("tahlan_legioinfernalis", -0.15f);
+        SDU.setRelationship("yrxp", 0f);
 
-        sevencorp.setRelationship("cabal", -0.5f);
+        SDU.setRelationship("cabal", -0.5f);
 
         // the below are just copied from xhan, but might be fine?
-        sevencorp.setRelationship("shadow_industry", -0.6f);
-        sevencorp.setRelationship("roider", -0.6f);
-        sevencorp.setRelationship("exipirated", -0.6f);
-        sevencorp.setRelationship("draco", -0.6f);
-        sevencorp.setRelationship("fang", -0.6f);
-        sevencorp.setRelationship("junk_pirates", -0.6f);
-        sevencorp.setRelationship("junk_pirates_hounds", -0.6f);
-        sevencorp.setRelationship("junk_pirates_junkboys", -0.6f);
-        sevencorp.setRelationship("junk_pirates_technicians", -0.6f);
-        sevencorp.setRelationship("the_cartel", -0.6f);
-        sevencorp.setRelationship("nullorder", -0.6f);
-        sevencorp.setRelationship("templars", -0.6f);
-        sevencorp.setRelationship("crystanite_pir", -0.6f);
-        sevencorp.setRelationship("infected", -0.6f);
-        sevencorp.setRelationship("new_galactic_order", -0.6f);
-        sevencorp.setRelationship("TF7070_D3C4", -0.6f);
-        sevencorp.setRelationship("minor_pirate_1", -0.6f);
-        sevencorp.setRelationship("minor_pirate_2", -0.6f);
-        sevencorp.setRelationship("minor_pirate_3", -0.6f);
-        sevencorp.setRelationship("minor_pirate_4", -0.6f);
-        sevencorp.setRelationship("minor_pirate_5", -0.6f);
-        sevencorp.setRelationship("minor_pirate_6", -0.6f);
+        SDU.setRelationship("shadow_industry", -0.6f);
+        SDU.setRelationship("roider", -0.6f);
+        SDU.setRelationship("exipirated", -0.6f);
+        SDU.setRelationship("draco", -0.6f);
+        SDU.setRelationship("fang", -0.6f);
+        SDU.setRelationship("junk_pirates", -0.6f);
+        SDU.setRelationship("junk_pirates_hounds", -0.6f);
+        SDU.setRelationship("junk_pirates_junkboys", -0.6f);
+        SDU.setRelationship("junk_pirates_technicians", -0.6f);
+        SDU.setRelationship("the_cartel", -0.6f);
+        SDU.setRelationship("nullorder", -0.6f);
+        SDU.setRelationship("templars", -0.6f);
+        SDU.setRelationship("crystanite_pir", -0.6f);
+        SDU.setRelationship("infected", -0.6f);
+        SDU.setRelationship("new_galactic_order", -0.6f);
+        SDU.setRelationship("TF7070_D3C4", -0.6f);
+        SDU.setRelationship("minor_pirate_1", -0.6f);
+        SDU.setRelationship("minor_pirate_2", -0.6f);
+        SDU.setRelationship("minor_pirate_3", -0.6f);
+        SDU.setRelationship("minor_pirate_4", -0.6f);
+        SDU.setRelationship("minor_pirate_5", -0.6f);
+        SDU.setRelationship("minor_pirate_6", -0.6f);
 
         SharedData.getData().getPersonBountyEventData().addParticipatingFaction("bushido");
 
@@ -207,7 +207,7 @@ public class SDU_fundament_mainscript {
         bushido.setRelationship(derelict.getId(), RepLevel.HOSTILE);
 
         // mod factions
-        bushido.setRelationship("sevencorp", 0.1f);
+        bushido.setRelationship("SDU", 0.1f);
         bushido.setRelationship("vic", 0f);
         bushido.setRelationship("ironsentinel", -0.75f);
         bushido.setRelationship("ironshell", -0.75f);
@@ -273,16 +273,16 @@ public class SDU_fundament_mainscript {
         // Sets light color in entire system, affects all entities
         system.setLightColor(new Color(255, 255, 255));
 
-        // Adds the giant space station Proelefsi
-        SectorEntityToken proelefsi = system.addCustomEntity("SDU_fundament_station", "Fundament", "fundament_cap", "SDU");
-        proelefsi.setCircularOrbitPointingDown(centerpoint, 0f, 50f, 99999999999f);
+        // Adds the giant space station Fundament
+        SectorEntityToken fundament = system.addCustomEntity("SDU_fundament_station", "Fundament", "fundament_cap", "SDU");
+        fundament.setCircularOrbitPointingDown(centerpoint, 0f, 50f, 99999999999f);
 
-        // Add the marketplace to Proelefsi ---------------
-        MarketAPI proelefsi_market = SDU_util_sysgen.addMarketplace(
+        // Add the marketplace to Fundament ---------------
+        MarketAPI fundament_market = SDU_util_sysgen.addMarketplace(
                 "SDU",
-                proelefsi,
+                fundament,
                 null,
-                "Proelefsi", // name of the market
+                "Fundament", // name of the market
                 4, // size of the market
                 new ArrayList<>(
                         Arrays.asList( // list of market conditions
@@ -308,41 +308,41 @@ public class SDU_fundament_mainscript {
                 true,
                 false);
 
-        proelefsi_market.getIndustry(Industries.POPULATION).setAICoreId(Commodities.ALPHA_CORE);
-        proelefsi_market.getIndustry(Industries.MEGAPORT).setAICoreId(Commodities.ALPHA_CORE);
-        proelefsi_market.getIndustry(Industries.ORBITALWORKS).setAICoreId(Commodities.ALPHA_CORE);
-        proelefsi_market.getIndustry(Industries.ORBITALWORKS).setSpecialItem(new SpecialItemData(Items.PRISTINE_NANOFORGE, null));
-        proelefsi_market.getIndustry(Industries.WAYSTATION).setAICoreId(Commodities.ALPHA_CORE);
-        proelefsi_market.getIndustry(Industries.HEAVYBATTERIES).setAICoreId(Commodities.ALPHA_CORE);
-        proelefsi_market.getIndustry(Industries.HIGHCOMMAND).setAICoreId(Commodities.ALPHA_CORE);
+        fundament_market.getIndustry(Industries.POPULATION).setAICoreId(Commodities.ALPHA_CORE);
+        fundament_market.getIndustry(Industries.MEGAPORT).setAICoreId(Commodities.ALPHA_CORE);
+        fundament_market.getIndustry(Industries.ORBITALWORKS).setAICoreId(Commodities.ALPHA_CORE);
+        fundament_market.getIndustry(Industries.ORBITALWORKS).setSpecialItem(new SpecialItemData(Items.PRISTINE_NANOFORGE, null));
+        fundament_market.getIndustry(Industries.WAYSTATION).setAICoreId(Commodities.ALPHA_CORE);
+        fundament_market.getIndustry(Industries.HEAVYBATTERIES).setAICoreId(Commodities.ALPHA_CORE);
+        fundament_market.getIndustry(Industries.HIGHCOMMAND).setAICoreId(Commodities.ALPHA_CORE);
 
-        if (!proelefsi_market.hasTag("proel_escorts_not_there")) {
-            proelefsi_market.addTag("proel_escorts_not_there");
+        if (!fundament_market.hasTag("fundament_escorts_not_there")) {
+            fundament_market.addTag("fundament_escorts_not_there");
         }
 
-        //proelefsi_market.getTariff().setBaseValue(); //nuke: in case you wanted Proel to have a different tariff value from the base, for some reason. not sure why you'd want it at 30%, which is significantly higher than the normal freeport rate.
-        proelefsi_market.setHidden(false);
+        //fundament_market.getTariff().setBaseValue(); //nuke: in case you wanted Proel to have a different tariff value from the base, for some reason. not sure why you'd want it at 30%, which is significantly higher than the normal freeport rate.
+        fundament_market.setHidden(false);
 
-        proelefsi_market.getMemoryWithoutUpdate().set("$nex_unbuyable", true);
+        fundament_market.getMemoryWithoutUpdate().set("$nex_unbuyable", true);
 
         //Adds our death manager, so we can keep track of when we are going to DIE
-        Global.getSector().addScript(new SDU_fundament_deathscript(proelefsi, proelefsi_market));
+        Global.getSector().addScript(new SDU_fundament_deathscript(fundament, fundament_market));
 
-        // Jump point : has a miniature script setting its rotation to be oppositely-locked to Proelefsi ---------------
+        // Jump point : has a miniature script setting its rotation to be oppositely-locked to fundament ---------------
         JumpPointAPI jumpPoint = Global.getFactory().createJumpPoint("SDU_fundament_jump_point", "Lamperocheri Rift");
         jumpPoint.setCircularOrbit(centerpoint, 180f, 900f, 99999999999f);
         system.addEntity(jumpPoint);
-        new OrbitOppositePlugin(jumpPoint, proelefsi);
+        new OrbitOppositePlugin(jumpPoint, fundament);
 
         // generates hyperspace destinations for in-system jump points
         system.autogenerateHyperspaceJumpPoints(false, false);
         system.generateAnchorIfNeeded();
 
-        sector.addScript(new MovingStarsystemScript(proelefsi, system));
+        sector.addScript(new MovingStarsystemScript(fundament, system));
 
-        Global.getSector().getIntelManager().addIntel(new SDU_spawnstorefrontintel(proelefsi_market, "sevencorp",7));
+        Global.getSector().getIntelManager().addIntel(new SDU_spawnstorefrontintel(fundament_market, "SDU",7));
 
-        return proelefsi_market;
+        return fundament_market;
     }
 
     private class OrbitOppositePlugin implements EveryFrameScript {
@@ -454,7 +454,7 @@ public class SDU_fundament_mainscript {
                 //We also spawn streaking stars when the player is in the system
                 spawnStreakingStars(amount);
 
-                //We *also* spawn a particle plume behind Proelefsi itself
+                //We *also* spawn a particle plume behind fundament itself
                 spawnEnginePlume(amount, starStation);
             } else {
                 runOnce = true;
@@ -530,14 +530,14 @@ public class SDU_fundament_mainscript {
 
         @Override
         public void reportPlayerOpenedMarket(MarketAPI market) {
-            if (!"seven_proelefsi_station_market".equals(market.getId())) {
+            if (!"SDU_fundament_station_market".equals(market.getId())) {
                 script.marketIsOpen = true;
             }
         }
 
         @Override
         public void reportPlayerClosedMarket(MarketAPI market) {
-            if (!"seven_proelefsi_station_market".equals(market.getId())) {
+            if (!"SDU_fundament_station_market".equals(market.getId())) {
                 script.marketIsOpen = false;
             }
         }

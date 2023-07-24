@@ -5,7 +5,7 @@ import com.fs.starfarer.api.campaign.*;
 import com.fs.starfarer.api.campaign.rules.MemoryAPI;
 import com.fs.starfarer.api.impl.campaign.rulecmd.BaseCommandPlugin;
 import com.fs.starfarer.api.util.Misc;
-//import data.scripts.characters.seven_AnodyneDialog;
+//import data.scripts.characters.SDU_AnodyneDialog;
 import data.scripts.characters.SDU_AshleyDialog;
 import data.scripts.characters.SDU_DecimusDialog;
 import data.scripts.characters.SDU_NathanDialog;
@@ -34,9 +34,8 @@ public class SDU_NPCDialogCMD extends BaseCommandPlugin {
 
         switch (cmd) {
 //            case "AnodyneDialog":
-//                characterDialog= new seven_AnodyneDialog();
+//                characterDialog= new SDU_AnodyneDialog();
 //                break;
-            //nuke: I assume this will break if we fix the spelling
             case "DeciumusDialog":
                 characterDialog = new SDU_DecimusDialog();
                 break;

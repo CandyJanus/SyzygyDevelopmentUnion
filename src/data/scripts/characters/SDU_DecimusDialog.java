@@ -18,11 +18,11 @@ public class SDU_DecimusDialog implements InteractionDialogPlugin {
     public static enum OptionId {
         INIT,
         CONT,
-        talkabouteptabase,
+        talkaboutsdubase,
         talkaboutotherbusinessesbase,
         talkaboutdecimusbase,
         shoottheshit,
-        talkabouteptaoverview, talkabouteptaoverviewtwo, leave, talkaboutsyzygy, talkaboutprotectors, talkaboutkantina, talkaboutsstars, talkaboutchutnam, talkaboutadprosec, talkaboutsyzygyconflictofinterest, talkaboutnathan, talkaboutrose, talkaboutashley, talkabouttriela, talkaboutadproadmins, talkaboutanodyne, talkaboutanodynetwo, talkaboutdecimustwo, shoottheshitfof, shoottheshitfofneverplayed, shoottheshitfofneverplayedtwo, shoottheshitfofstack, shoottheshitfof1v1, sierrabase, hasnotmetsierra, sierratwo, orkosspecs, orkossold, olddata11, olddataintro, olddata12, olddata13;
+        talkaboutsduoverview, talkaboutsduoverviewtwo, leave, talkaboutsyzygy, talkaboutprotectors, talkaboutkantina, talkaboutsstars, talkaboutchutnam, talkaboutadprosec, talkaboutsyzygyconflictofinterest, talkaboutnathan, talkaboutrose, talkaboutashley, talkabouttriela, talkaboutadproadmins, talkaboutanodyne, talkaboutanodynetwo, talkaboutdecimustwo, shoottheshitfof, shoottheshitfofneverplayed, shoottheshitfofneverplayedtwo, shoottheshitfofstack, shoottheshitfof1v1, sierrabase, hasnotmetsierra, sierratwo, orkosspecs, orkossold, olddata11, olddataintro, olddata12, olddata13;
     }
 
     protected InteractionDialogAPI dialog;
@@ -65,7 +65,7 @@ public class SDU_DecimusDialog implements InteractionDialogPlugin {
             textPanel.addParagraph(text, Global.getSettings().getColor("buttonText"));
         }
 
-        Color sc = Global.getSector().getFaction("sevencorp").getBaseUIColor();
+        Color sc = Global.getSector().getFaction("SDU").getBaseUIColor();
 
         MemoryAPI memory = Global.getSector().getMemoryWithoutUpdate();
 
@@ -78,7 +78,7 @@ public class SDU_DecimusDialog implements InteractionDialogPlugin {
                 visual.showPersonInfo(character, true);
 
                 options.clearOptions();
-                options.addOption("\"I was wondering a bit about the Epta Consortium.\"", OptionId.talkabouteptabase, null);
+                options.addOption("\"I was wondering a bit about the SDU.\"", OptionId.talkaboutsdubase, null);
                 options.addOption("\"What do you think about the other businesses and leaders in the Consortium?\"", OptionId.talkaboutotherbusinessesbase, null);
                 options.addOption("\"Who are you?\"", OptionId.talkaboutdecimusbase, null);
                 options.addOption("\"What's up?\"", OptionId.shoottheshit, null);
@@ -95,22 +95,22 @@ public class SDU_DecimusDialog implements InteractionDialogPlugin {
                 memory.set("$hasTalkedToDecimus", true);
                 break;
 
-                //talking about epta
-            case talkabouteptabase:
+                //talking about sdu
+            case talkaboutsdubase:
                 textPanel.addParagraph("\"Sure, I think I know a thing or two about it.\"");
 
                 options.clearOptions();
-                options.addOption("\"So what exactly do you people do?\"", OptionId.talkabouteptaoverview, null);
+                options.addOption("\"So what exactly do you people do?\"", OptionId.talkaboutsduoverview, null);
                 break;
 
-            case talkabouteptaoverview:
-                textPanel.addParagraph("\"Well the Epta Consortium is a collection of free enterprises that have a pretty unique advantage... well several actually, but one really major one. We're all pretty big on AI around here and obviously that comes with some major benefits and some... also pretty sizable detriments.\"");
+            case talkaboutsduoverview:
+                textPanel.addParagraph("\"Well the SDU is a collection of free enterprises that have a pretty unique advantage... well several actually, but one really major one. We're all pretty big on AI around here and obviously that comes with some major benefits and some... also pretty sizable detriments.\"");
 
                 options.clearOptions();
-                options.addOption("\"Detriments such as?\"", OptionId.talkabouteptaoverviewtwo, null);
+                options.addOption("\"Detriments such as?\"", OptionId.talkaboutsduoverviewtwo, null);
                 break;
 
-            case talkabouteptaoverviewtwo:
+            case talkaboutsduoverviewtwo:
                 textPanel.addParagraph("\"Well obviously being able to put a few thinking machines like me on any given task is nice, but you may have noticed that the Hegies don't exactly take kindly to our existence so that's a fairly major wrench in the works.\"");
 
                 options.clearOptions();
@@ -183,7 +183,7 @@ public class SDU_DecimusDialog implements InteractionDialogPlugin {
 
             //talking about Shooting Stars
             case talkaboutsstars:
-                textPanel.addParagraph("\"They're my kind of company; glitz, glamour, and exorbitantly priced superships. Can't speak much to the profits on their custom work, but they also handle most of our smaller deals for stuff that Proelefsi can't produce on its own. We'd be goners without em for sure.\"");
+                textPanel.addParagraph("\"They're my kind of company; glitz, glamour, and exorbitantly priced superships. Can't speak much to the profits on their custom work, but they also handle most of our smaller deals for stuff that Fundament can't produce on its own. We'd be goners without em for sure.\"");
 
                 options.clearOptions();
                 options.addOption("\"What do you think about their CEO?\"", OptionId.talkaboutashley, null);
@@ -256,7 +256,7 @@ public class SDU_DecimusDialog implements InteractionDialogPlugin {
                 break;
 
             case talkaboutdecimustwo:
-                textPanel.addParagraph("\"Well aside from being an Alpha Core, I've also got a decent number of subroutines and combat protocols written by Gia before he dipped out on us. If the simulator rankings are to be believed then I'm in the running for top 10 pilots in the sector.\n At the very least I'm the top pick for piloting Proelefsi just due to hours on the job before you even start on technical ability; she may be built like a brick shithouse, but her lack of agility and the know how needed to use essential systems is pretty extreme.\"");
+                textPanel.addParagraph("\"Well aside from being an Alpha Core, I've also got a decent number of subroutines and combat protocols written by Gia before he dipped out on us. If the simulator rankings are to be believed then I'm in the running for top 10 pilots in the sector.\n At the very least I'm the top pick for piloting Fundament just due to hours on the job before you even start on technical ability; she may be built like a brick shithouse, but her lack of agility and the know how needed to use essential systems is pretty extreme.\"");
 
                 options.clearOptions();
                 options.addOption("\"Let's talk about something else.\"", OptionId.INIT, null);
@@ -301,7 +301,7 @@ public class SDU_DecimusDialog implements InteractionDialogPlugin {
                 break;
 
             case olddataintro:
-                textPanel.addParagraph("\"Well back with Gia Epta was still around his computing power managed a solid ninety percent of all of our onboard systems and obviously that led to some data leakage. Maybe it was intentionally left behind, but in any case there are a few dozen message logs that have been encrypted, hidden, and forgotten about in some of our algorithms. So being the inquisitive fellow that I am from time to time I like to give decrypting them a shot and seeing what new mysteries the old boss left for us.\"");
+                textPanel.addParagraph("\"Well back when the founder was still around his computing power managed a solid ninety percent of all of our onboard systems and obviously that led to some data leakage. Maybe it was intentionally left behind, but in any case there are a few dozen message logs that have been encrypted, hidden, and forgotten about in some of our algorithms. So being the inquisitive fellow that I am from time to time I like to give decrypting them a shot and seeing what new mysteries the old boss left for us.\"");
 
                 memory.set("$spokeaboutdata",true);
 
@@ -328,7 +328,7 @@ public class SDU_DecimusDialog implements InteractionDialogPlugin {
                 break;
 
             case olddata13:
-                textPanel.addParagraph("\"Not a damn clue, I've never heard of any Merrill outside of these logs and its fairly clear that she was up to no good. I knew that Gia Epta was with a fairly shady group before coming here, but this doesn't really shed much light on the situation.\"");
+                textPanel.addParagraph("\"Not a damn clue, I've never heard of any Merrill outside of these logs and its fairly clear that she was up to no good. I knew that the founder was with a fairly shady group before coming here, but this doesn't really shed much light on the situation.\"");
 
                 options.clearOptions();
                 options.addOption("\"It is strange, let's talk about something else for now.\"", OptionId.INIT, null);
@@ -390,7 +390,7 @@ public class SDU_DecimusDialog implements InteractionDialogPlugin {
                 }else {
                     textPanel.addParagraph("You were on fire for the whole match, a veritable god of battle rivalled only by your teammate. You destroyed this match with "+playerscore+" kills.");
                 }
-                memory.set("$seven_player_fofskill",playerskill+1);
+                memory.set("$SDU_player_fofskill",playerskill+1);
 
                 if(!memory.contains("$recentgamedate")){
                     memory.set("$recentgamedate",Global.getSector().getClock().getDay()-3);
@@ -497,7 +497,7 @@ public class SDU_DecimusDialog implements InteractionDialogPlugin {
                 para.setHighlightColor(sierracolor);
                 para.setHighlight("\"Thanks captain, I really appreciate it. And thank you Decimus, glad to know that at least some AIs are watching out for eachother.\"");
 
-                playerFleet.getFleetData().addFleetMember("seven_orkos_attack");
+                playerFleet.getFleetData().addFleetMember("SDU_orkos_attack");
                 playerFleet.getCargo().getCredits().add(-300000);
                 memory.set("$HasPurchasedOrkos",true);
 
@@ -507,12 +507,12 @@ public class SDU_DecimusDialog implements InteractionDialogPlugin {
 
 
             case CONT:
-                if(Global.getSector().getPersistentData().get("seven_originaldialog")!=null) {
-                    InteractionDialogPlugin original = (InteractionDialogPlugin) Global.getSector().getPersistentData().get("seven_originaldialog");
+                if(Global.getSector().getPersistentData().get("SDU_originaldialog")!=null) {
+                    InteractionDialogPlugin original = (InteractionDialogPlugin) Global.getSector().getPersistentData().get("SDU_originaldialog");
                     dialog.setPlugin(original);
                     options.clearOptions();
                     FireAll.fire(null, dialog, original.getMemoryMap(), "PopulateOptions");
-                    Global.getSector().getPersistentData().remove("seven_originaldialog");
+                    Global.getSector().getPersistentData().remove("SDU_originaldialog");
                 }else{
                     dialog.dismiss();
                 }

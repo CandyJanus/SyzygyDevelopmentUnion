@@ -22,9 +22,8 @@
 		},
 
         "blueprint_packages":{
-			//"seven_eptaphaseship_package":"graphics/icons/cargo/seven_blueprint_package.png",
-			//"seven_eptashipgun_package":"graphics/icons/cargo/seven_blueprint_package.png",
-			//"seven_takeshido_package":"graphics/icons/cargo/seven_takeshido_package.png",
+			#//"SDU_eptaphaseship_package":"graphics/icons/cargo/SDU_blueprint_package.png",
+			#//"SDU_eptashipgun_package":"graphics/icons/cargo/seven_blueprint_package.png",
 	},
 
 		"fx":{

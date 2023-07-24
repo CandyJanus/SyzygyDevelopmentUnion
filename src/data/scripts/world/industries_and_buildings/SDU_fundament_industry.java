@@ -49,7 +49,7 @@ public class SDU_fundament_industry extends OrbitalStation {
         super.apply(false);
 
         for(Industry I : market.getIndustries()){
-            I.getDemandReduction().modifyFlat("proelefsireduction", 10);
+            I.getDemandReduction().modifyFlat("fundamentreduction", 10);
         }
 
         int size = 7; // To match a star fortress
@@ -77,11 +77,11 @@ public class SDU_fundament_industry extends OrbitalStation {
     protected void matchCommanderToAICore(String aiCore) {
         if (stationFleet == null) return;
 
-        //log.info(Global.getSector().getImportantPeople().getPerson("epta_decimus").getName().getFullName());
+        //log.info(Global.getSector().getImportantPeople().getPerson("sdu_decimus").getName().getFullName());
         //log.info(stationFleet.getFlagship().getHullId());
 
-        if(Global.getSector().getImportantPeople().getPerson("epta_decimus")!=null && stationFleet!=null && stationFleet.getFlagship()!=null){
-            stationFleet.getFlagship().setCaptain(Global.getSector().getImportantPeople().getPerson("epta_decimus"));
+        if(Global.getSector().getImportantPeople().getPerson("sdu_decimus")!=null && stationFleet!=null && stationFleet.getFlagship()!=null){
+            stationFleet.getFlagship().setCaptain(Global.getSector().getImportantPeople().getPerson("sdu_decimus"));
         }
         //for(String h : stationFleet.getFlagship().getVariant().getHullMods()){
         //            if(Global.getSettings().getHullModSpec(h).hasTag("dmod"));
@@ -102,18 +102,18 @@ public class SDU_fundament_industry extends OrbitalStation {
 
         CampaignFleetAPI fleet=FleetFactory.createPatrol(MEGALOS_ESCORT_TYPE, market.getFaction(), market.getStabilityValue(), market.getShipQualityFactor(), null);
 
-        FactionAPI epta = Global.getSector().getFaction("sevencorp");
+        FactionAPI sdu = Global.getSector().getFaction("SDU");
 
         FleetDataAPI fleetData=fleet.getFleetData();
         fleetData.clear();
         for (int i = 0; i < DEFENDERCOUNT; i++) {
             FleetMemberAPI ship = fleetData.addFleetMember(MEGALOS_DEFENDER_VARIANT_1);
-            ship.setCaptain(OfficerManagerEvent.createOfficer(epta, 10));
+            ship.setCaptain(OfficerManagerEvent.createOfficer(sdu, 10));
         }
 
         if (fleet == null || fleet.isEmpty()) return null;
 
-        fleet.setFaction("sevencorp", true);
+        fleet.setFaction("SDU", true);
         fleet.setNoFactionInName(true);
 
         if (type == PatrolType.COMBAT) {

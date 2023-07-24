@@ -19,7 +19,7 @@ import org.lazywizard.lazylib.MathUtils;
 import java.util.List;
 import java.util.Set;
 
-public class SevencorpEliteBuyersMarket extends BaseSubmarketPlugin {
+public class SDUEliteBuyersMarket extends BaseSubmarketPlugin {
     private static WeightedRandomPicker<String> hullmodPicker = new WeightedRandomPicker();
     public static float ECON_UNIT_MULT_EXTRA;
     public static float ECON_UNIT_MULT_PRODUCTION;
@@ -29,7 +29,7 @@ public class SevencorpEliteBuyersMarket extends BaseSubmarketPlugin {
 
     private final RepLevel MIN_STANDING = RepLevel.COOPERATIVE;
 
-    public SevencorpEliteBuyersMarket() {
+    public SDUEliteBuyersMarket() {
     }
 
     @Override
