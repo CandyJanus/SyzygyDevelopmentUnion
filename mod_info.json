@@ -7,11 +7,11 @@
 	"description":"",
     "gameVersion": "0.96a-RC8",
     "totalConversion": "false",
-  	"jars":["jars/SyzygyDevelopmentUnion.jar"],
-    "modPlugin":"data.scripts.SDU_ModPlugin",
+  	"jars":["jars/TheWildflowerSociety.jar"],
+    "modPlugin":"data.scripts.WildflowerPlugin",
     "dependencies": [
-      {"id": "lw_lazylib", "name": "LazyLib"},
-      {"id": "MagicLib", "name": "MagicLib"}
+      #{"id": "lw_lazylib", "name": "LazyLib"},
+      #{"id": "MagicLib", "name": "MagicLib"}
     ],
     "ruleCommandPackages":[
       "data.scripts.rulecmds",
