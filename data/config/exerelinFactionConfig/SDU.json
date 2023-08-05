@@ -1,0 +1,95 @@
+{"playableFaction":true,
+    "corvusCompatible":true,
+    
+    "rebelFleetSuffix":"Phoenix Slaves", 
+    "directoryUseShortName":true,
+    
+    "marketSpawnWeight":1.5,
+
+    "startRelationships":{ "hegemony": -1.0},
+    "maxRelationships":{ "luddic_church":-0.4, "luddic_path":-0.5, "hegemony": -0.4 },
+    "minRelationships":{ "no_such_org":-0.4},
+    "diplomacyPositiveChance":{ "luddic_church":0.4, "luddic_path":0.2},
+    "diplomacyNegativeChance":{ "luddic_church":3.8, "luddic_path":2.0},
+    "morality":"good",
+    
+    "alignments":{
+        "technocratic":1,
+        "ideological":1,
+        "diplomatic":1
+    },
+    "diplomacyTraits":["stalwart", "neutralist", "likes_ai", "pacifist"],
+
+    "invasionOnlyRetake":true,
+
+    "freeMarket":true,
+    
+    # chance of the faction being picked to send a colony expedition. Default 0 (disabled)
+    "colonyExpeditionChance":1,
+    "colonyTargetValuator":"exerelin.campaign.colony.IndustrialColonyTargetValuator",
+    
+    
+    "groundBattleSettings":{
+        "moraleDamageTakenMult":0.15,
+    },
+	
+	"vengeanceFleetNames":["Fragment", "Sub-Ordo", "Ordo"],
+    "vengeanceFleetNamesSingle":["a Hunter Fragment", "a Sub-Ordo", "an Ordo"],
+
+    "specialForcesNamerClass":"exerelin.campaign.intel.specialforces.namer.FactionListNamer",
+    "startShipsSolo":[
+	["onslaught_elite"],
+	["onslaught_elite"],
+    ["onslaught_elite"],
+	],
+    "startShipsCombatSmall":[
+      ["onslaught_elite", "onslaught_elite"],
+      ["onslaught_elite", "onslaught_elite", "onslaught_elite"],
+	  ["onslaught_elite", "onslaught_elite", "onslaught_elite"],
+	  ["onslaught_elite", "onslaught_elite"],
+    ],
+    "startShipsCombatLarge":[
+      ["onslaught_elite", "onslaught_elite", "onslaught_elite" ],
+	  ["onslaught_elite", "onslaught_elite", "onslaught_elite" ],
+	  ["onslaught_elite", "onslaught_elite", "onslaught_elite" ],
+	  ["onslaught_elite", "onslaught_elite", "onslaught_elite", "onslaught_elite"],
+	  ["onslaught_elite", "onslaught_elite", "onslaught_elite"],
+    ],
+    "startShipsCarrierSmall":[
+      ["onslaught_elite", "onslaught_elite"],
+      ["onslaught_elite", "onslaught_elite","onslaught_elite"],
+    ],
+    "startShipsCarrierLarge":[
+     ["onslaught_elite", "onslaught_elite", "onslaught_elite"],
+      ["onslaught_elite", "onslaught_elite", "onslaught_elite"],
+	  ["onslaught_elite", "onslaught_elite"],
+    ],
+    "startShipsTradeSmall":[
+    ["onslaught_elite", "onslaught_elite", "onslaught_elite"],
+    ],
+    "startShipsTradeLarge":[
+      ["astral_Elite", "astral_Elite", "astral_Elite"],
+    ],
+	"startShipsExplorerLarge":[["astral_Elite", "astral_Elite", "astral_Elite"]],
+    "startShipsSuper":[
+        ["astral_Elite"],
+    ],
+    
+    "defenceStations":[
+        {"ids":["orbitalstation_high", "battlestation_high", "starfortress_high"]},
+    ],
+    
+    "industrySeeds":[
+        {"id":"orbitalworks", "mult":0.1},
+        {"id":"lightindustry", "mult":0.1},
+        {"id":"heavyindustry", "mult":0.2}
+    ],
+    
+    "bonusSeeds":[
+        {"id":"nanoforge_corrupted", "count":1},
+        {"id":"aiCore_station", "count":2, "mult":0.2},
+        {"id":"aiCore_military", "mult":0.4},
+        {"id":"aiCore_heavyindustry", "count":1},
+        {"id":"aiCore_any", "mult":1.5},
+    ],
+}
