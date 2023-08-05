@@ -1,10 +1,10 @@
 {
-    "id":"SyzygyDevelopmentUnion", # For the convenience of troubleshooters, include your name and the mod name, not just an acronym.
-	"name":"Syzygy Development Union", # Displayed to the player
-	"author":"The Syzygy Team",
+    "id":"TheWildflowerSociety", # For the convenience of troubleshooters, include your name and the mod name, not just an acronym.
+	"name":"The Wildflower Society", # Displayed to the player
+	"author":"NuclearStudent",
     "utility":"false",
 	"version":"1.0.0",
-	"description":"Blank java-only template for Szyzgy",
+	"description":"",
     "gameVersion": "0.96a-RC8",
   	"jars":["jars/SyzygyDevelopmentUnion.jar"],
     "modPlugin":"SyzygyDevelopmentUnion.SyzygyTeam.TemplateModPlugin",
