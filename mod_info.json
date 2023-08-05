@@ -1,13 +1,13 @@
 {
-    "id":"SyzygyDevelopmentUnion", # For the convenience of troubleshooters, include your name and the mod name, not just an acronym.
-	"name":"Syzygy Development Union", # Displayed to the player
-	"author":"The Syzygy Team",
+    "id":"Takeshido", # For the convenience of troubleshooters, include your name and the mod name, not just an acronym.
+	"name":"Takeshido", # Displayed to the player
+	"author":"The Takeshido Team",
     "utility":"false",
 	"version":"1.0.0",
-	"description":"Blank java-only template for Szyzgy",
+	"description":"Why do the pirates have racecars in space?",
     "gameVersion": "0.96a-RC8",
-  	"jars":["jars/SyzygyDevelopmentUnion.jar"],
-    "modPlugin":"SyzygyDevelopmentUnion.SyzygyTeam.TemplateModPlugin",
+  	"jars":["jars/Takeshido.jar"],
+    "modPlugin":"Takeshido.TakeshidoTeam.TemplateModPlugin",
 	  	"dependencies": [
         #{
         #    "id": "lw_lazylib",
