@@ -6,10 +6,6 @@ import com.fs.starfarer.api.campaign.rules.MemoryAPI;
 import com.fs.starfarer.api.impl.campaign.rulecmd.BaseCommandPlugin;
 import com.fs.starfarer.api.util.Misc;
 //import data.scripts.characters.SDU_AnodyneDialog;
-import data.scripts.characters.SDU_AshleyDialog;
-import data.scripts.characters.SDU_DecimusDialog;
-import data.scripts.characters.SDU_NathanDialog;
-import data.scripts.utils.interactionUI.*;
 
 import java.util.List;
 import java.util.Map;
