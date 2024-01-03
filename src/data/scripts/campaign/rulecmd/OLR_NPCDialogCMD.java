@@ -14,7 +14,7 @@ import data.scripts.utils.interactionUI.*;
 import java.util.List;
 import java.util.Map;
 
-public class SDU_NPCDialogCMD extends BaseCommandPlugin {
+public class OLR_NPCDialogCMD extends BaseCommandPlugin {
 
     @Override
     public boolean execute(String ruleId, InteractionDialogAPI dialog, List<Misc.Token> params, Map<String, MemoryAPI> memoryMap) {
@@ -26,7 +26,7 @@ public class SDU_NPCDialogCMD extends BaseCommandPlugin {
 
         cmd = params.get(0).getString(memoryMap);
 
-        Global.getSector().getPersistentData().put("SDU_originaldialog",dialog.getPlugin());
+        Global.getSector().getPersistentData().put("OLR_originaldialog",dialog.getPlugin());
 
         //nuke: some refactors for neatness and performance, done with Lukas04's help
 
@@ -36,22 +36,6 @@ public class SDU_NPCDialogCMD extends BaseCommandPlugin {
 //            case "AnodyneDialog":
 //                characterDialog= new SDU_AnodyneDialog();
 //                break;
-            case "DeciumusDialog":
-                characterDialog = new SDU_DecimusDialog();
-                break;
-
-            case "AshleyDialog":
-                characterDialog = new SDU_AshleyDialog();
-                break;
-
-            case "NathanDialog":
-                characterDialog = new SDU_NathanDialog();
-                break;
-
-
-            case "convertorExecDialog":
-                characterDialog = new SDU_convertorExecDialog();
-                break;
 
         }
 

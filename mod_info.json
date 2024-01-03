@@ -1,47 +1,21 @@
 {
 <<<<<<< HEAD
-    "id":"TheWildflowerSociety", # For the convenience of troubleshooters, include your name and the mod name, not just an acronym.
-	"name":"The Wildflower Society", # Displayed to the player
+    "id":"OneLastRound", # For the convenience of troubleshooters, include your name and the mod name, not just an acronym.
+	"name":"One Last Round", # Displayed to the player
 	"author":"NuclearStudent",
     "utility":"false",
-	"version":"1.0.0",
+	"version":"0.0.10",
 	"description":"",
-    "gameVersion": "0.96a-RC8",
+    "gameVersion": "0.96a-RC10",
     "totalConversion": "false",
-  	"jars":["jars/SyzygyDevelopmentUnion.jar"],
-    "modPlugin":"data.scripts.SDU_ModPlugin",
+  	"jars":["jars/OneLastRound.jar"],
+    "modPlugin":"data.scripts.OLR_ModPlugin",
     "dependencies": [
       {"id": "lw_lazylib", "name": "LazyLib"},
-      {"id": "MagicLib", "name": "MagicLib"}
+      {"id": "MagicLib", "name": "MagicLib"},
+      {"id": "nexerelin", "name": "nexerelin"}
     ],
     "ruleCommandPackages":[
       "data.scripts.rulecmds",
-=======
-    "id":"SyzygyDevelopmentUnion", # For the convenience of troubleshooters, include your name and the mod name, not just an acronym.
-	"name":"Syzygy Development Union", # Displayed to the player
-	"author":"The Syzygy Team",
-    "utility":"false",
-	"version":"1.0.0",
-	"description":"Blank java-only template for Szyzgy",
-    "gameVersion": "0.96a-RC8",
-  	"jars":["jars/SyzygyDevelopmentUnion.jar"],
-    "modPlugin":"data.scripts.SDU_ModPlugin",
-	  	"dependencies": [
-        #{
-        #    "id": "lw_lazylib",
-        #    "name": "LazyLib",
-        #    #"version": "2.7b"
-        #},
-        #{
-        #    "id": "MagicLib",
-        #    "name": "MagicLib",
-        #    #"version": "0.34"
-        #},
-        #{
-        #    "id": "shaderLib",
-        #    "name": "GraphicsLib",
-        #    #"version": "1.5.1"
-        #}
->>>>>>> parent of 74bd066 (Adjusting takeshido template)
     ],
 }
